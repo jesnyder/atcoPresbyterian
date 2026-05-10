@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atco United Presbyterian Church — Complete History Since 1851</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#fdf6e8;--parch:#f5ead4;--navy:#1b2d5e;--navyL:#2a4080;
+  --gold:#b8913a;--goldL:#d4ac5a;--goldP:#f0e4c0;
+  --brown:#2c1a0e;--brownM:#5c4030;--brownMt:#8a7060;
+  --card:#fffcf5;--bdr:rgba(184,145,58,.22);--bdrS:rgba(184,145,58,.5);
+  --shad:rgba(28,18,8,.08);
+  --tag-org:#e6ede8;--tag-org-t:#1d4d28;
+  --tag-past:#e8eaf4;--tag-past-t:#1b2d5e;
+  --tag-bld:#f5ecd8;--tag-bld-t:#6b4010;
+  --tag-com:#f0eaf5;--tag-com-t:#4a1d78;
+  --tag-mus:#fce8e8;--tag-mus-t:#7a1515;
+  --tag-fth:#e8f4f0;--tag-fth-t:#0d4a38;
+  --tag-now:#e6f0fa;--tag-now-t:#0b3060;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--brown);font-family:'Crimson Text',Georgia,serif;font-size:18px;line-height:1.75}
+
+/* ── HERO ── */
+.hero{background:var(--navy);color:#fff;text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(184,145,58,.15),transparent 65%);pointer-events:none}
+.hero-cross{display:block;margin:0 auto 1rem;width:44px;height:44px;opacity:.65}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;letter-spacing:.02em;line-height:1.2;color:#fff}
+.hero h1 span{display:block;font-size:clamp(.9rem,2.5vw,1.25rem);font-weight:400;font-style:italic;color:var(--goldL);margin-top:.3rem}
+.hero-quote{margin:1.1rem auto 0;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.85rem,2.3vw,1rem);color:rgba(255,255,255,.62);max-width:600px;line-height:1.6}
+.hero-attr{display:block;margin-top:.4rem;font-size:.78rem;font-style:normal;letter-spacing:.06em;color:rgba(255,255,255,.38)}
+.hero-stats{display:flex;justify-content:center;gap:2rem;margin-top:1.75rem;flex-wrap:wrap}
+.hero-stat strong{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--goldL);line-height:1}
+.hero-stat span{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);font-family:'Libre Baskerville',serif}
+
+/* ── NAV ── */
+.nav-bar{background:var(--navy);padding:.55rem 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;border-top:1px solid rgba(184,145,58,.2)}
+.nav-bar a{color:rgba(255,255,255,.65);font-size:.8rem;font-family:'Libre Baskerville',serif;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:color .15s}
+.nav-bar a:hover{color:var(--goldL)}
+
+/* ── CONTROLS ── */
+.controls{background:var(--parch);border-bottom:1px solid var(--bdrS);padding:1rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px var(--shad)}
+.controls-inner{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:.55rem}
+.search-wrap{position:relative}
+.search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--brownMt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#search{width:100%;padding:.58rem 1rem .58rem 2.35rem;border:1px solid var(--bdrS);border-radius:6px;background:var(--card);font-family:'Crimson Text',serif;font-size:1rem;color:var(--brown);outline:none;transition:border-color .2s}
+#search:focus{border-color:var(--gold)}
+#search::placeholder{color:var(--brownMt)}
+.filters{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.filter-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brownMt);font-family:'Libre Baskerville',serif;margin-right:.2rem}
+.fbtn{background:transparent;border:1px solid var(--bdrS);border-radius:20px;padding:.16rem .65rem;font-family:'Crimson Text',serif;font-size:.82rem;color:var(--brownM);cursor:pointer;transition:all .15s}
+.fbtn:hover{background:var(--goldP)}
+.fbtn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+#res-ct{font-size:.78rem;color:var(--brownMt);font-style:italic;margin-left:.3rem}
+
+/* ── CONTEMPORARY ── */
+.contemporary{background:var(--parch);border-bottom:1px solid var(--bdrS);padding:2rem 1.5rem}
+.contemporary .inner{max-width:980px;margin:0 auto}
+.sec-head{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:.15rem}
+.sec-head em{display:block;font-size:.85rem;font-style:italic;font-weight:400;color:var(--brownMt);margin-top:.1rem}
+.contemp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem;margin-top:1.25rem}
+.c-card{background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:.8rem 1rem}
+.c-card h3{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.c-card p,.c-card li{font-size:.88rem;color:var(--brownM);line-height:1.65}
+.c-card ul{padding-left:1.1rem}
+.c-card a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.tower-pills{display:flex;flex-direction:column;gap:.3rem;margin-top:.4rem}
+.tp{background:var(--goldP);border:1px solid var(--bdrS);border-radius:4px;padding:.12rem .55rem;font-size:.8rem;color:var(--brownM)}
+
+/* ── TIMELINE SECTION ── */
+.timeline-wrap{max-width:980px;margin:0 auto;padding:1.75rem 1.5rem 3rem}
+.timeline-wrap > h2{text-align:center;margin-bottom:.2rem}
+.timeline-hint{text-align:center;font-size:.82rem;font-style:italic;color:var(--brownMt);margin-bottom:1.25rem}
+#no-results{text-align:center;padding:2.5rem;display:none}
+#no-results p{color:var(--brownMt);font-style:italic}
+
+/* ── DECADE ACCORDION ── */
+.decade{border:1px solid var(--bdr);border-radius:10px;margin-bottom:.85rem;overflow:hidden;box-shadow:0 1px 4px var(--shad)}
+.decade-hdr{width:100%;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.1rem;background:var(--parch);border:none;cursor:pointer;text-align:left;gap:.7rem;transition:background .15s}
+.decade-hdr:hover{background:var(--goldP)}
+.decade-hdr.open{background:var(--navy)}
+.dh-left{display:flex;align-items:baseline;gap:.65rem;flex:1;min-width:0}
+.dh-era{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.2}
+.decade-hdr.open .dh-era{color:#fff}
+.dh-years{font-family:'Libre Baskerville',serif;font-size:.75rem;color:var(--gold);letter-spacing:.04em;white-space:nowrap}
+.decade-hdr.open .dh-years{color:var(--goldL)}
+.dh-right{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.dh-count{font-size:.73rem;color:var(--brownMt);font-family:'Libre Baskerville',serif;white-space:nowrap}
+.decade-hdr.open .dh-count{color:rgba(255,255,255,.5)}
+.dh-arrow{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;flex-shrink:0}
+.decade-hdr.open .dh-arrow{stroke:#fff;transform:rotate(180deg)}
+.decade-body{display:none}
+.decade-body.show{display:block}
+
+/* ── EVENT ROWS ── */
+.event-row{border-top:1px solid var(--bdr);cursor:pointer;transition:background .1s}
+.event-row:hover{background:rgba(184,145,58,.05)}
+.event-row.match-hidden{display:none}
+.event-summary{display:flex;align-items:baseline;gap:.65rem;padding:.6rem 1.1rem;flex-wrap:wrap}
+.ev-year{flex:0 0 76px;font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;color:var(--gold);line-height:1.3}
+.ev-tag{flex-shrink:0;font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;padding:.09rem .42rem;border-radius:10px;font-family:'Libre Baskerville',serif;font-weight:700;white-space:nowrap}
+.ev-title{font-size:.95rem;color:var(--navy);font-family:'Playfair Display',serif;font-weight:600;flex:1;line-height:1.35;min-width:120px}
+.ev-arrow{width:12px;height:12px;stroke:var(--brownMt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform .2s;margin-left:auto;align-self:center}
+.event-row.open .ev-arrow{transform:rotate(90deg)}
+.event-detail{display:none;padding:.6rem 1.1rem .95rem;background:var(--card);border-top:1px solid var(--bdr)}
+.event-row.open .event-detail{display:block}
+.event-detail p{font-size:.9rem;color:var(--brownM);line-height:1.72;margin-bottom:.45rem}
+.event-detail p:last-child{margin-bottom:0}
+.event-detail .eq{margin-top:.5rem;padding:.38rem .75rem;border-left:3px solid var(--gold);font-style:italic;color:var(--brownMt);font-size:.86rem;line-height:1.6}
+.event-detail strong{font-weight:600;color:var(--brown)}
+mark{background:rgba(184,145,58,.28);color:inherit;border-radius:2px;padding:0 1px}
+
+/* ── PASTORS ── */
+.pastors-section{background:var(--navy);color:#fff;padding:2.5rem 1.5rem}
+.p-inner{max-width:980px;margin:1.5rem auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:.8rem}
+.pc{background:rgba(255,255,255,.07);border:1px solid rgba(184,145,58,.25);border-radius:8px;padding:.7rem .9rem}
+.pc .pn{font-family:'Playfair Display',serif;font-weight:600;font-size:.9rem;color:#fff;line-height:1.3}
+.pc .py{font-size:.78rem;color:var(--goldL);margin-top:.1rem;font-style:italic}
+.pc .pp{font-size:.72rem;color:rgba(255,255,255,.42);margin-top:.12rem}
+
+/* ── MUSIC ── */
+.music-section{background:var(--parch);border-top:1px solid var(--bdrS);border-bottom:1px solid var(--bdrS);padding:2.5rem 1.5rem}
+.music-list{max-width:720px;margin:1.2rem auto 0;list-style:none}
+.music-list li{display:flex;gap:.7rem;align-items:baseline;padding:.42rem 0;border-bottom:1px solid var(--bdr);font-size:.88rem}
+.music-list li:last-child{border:none}
+.ml-year{font-family:'Playfair Display',serif;font-weight:700;color:var(--gold);flex:0 0 80px;font-size:.82rem}
+.ml-role{color:var(--brownMt);font-style:italic;flex:0 0 92px;font-size:.79rem}
+.ml-name{color:var(--brown);flex:1}
+
+/* ── PEOPLE ── */
+.people-section{padding:2.5rem 1.5rem;border-top:1px solid var(--bdrS)}
+.psearch-wrap{max-width:440px;margin:.9rem auto;position:relative}
+.psearch-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--brownMt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#psearch{width:100%;padding:.52rem 1rem .52rem 2.2rem;border:1px solid var(--bdrS);border-radius:6px;background:var(--card);font-family:'Crimson Text',serif;font-size:.92rem;color:var(--brown);outline:none}
+#psearch:focus{border-color:var(--gold)}
+.people-grid{max-width:980px;margin:0 auto;columns:3 190px;gap:.9rem}
+.fam-entry{break-inside:avoid;background:var(--card);border:1px solid var(--bdr);border-radius:6px;padding:.55rem .75rem;margin-bottom:.6rem}
+.fam-entry.hidden{display:none}
+.fam-name{font-family:'Playfair Display',serif;font-weight:600;font-size:.92rem;color:var(--navy)}
+.fam-desc{font-size:.78rem;color:var(--brownMt);margin-top:.08rem;line-height:1.5}
+
+/* ── FOOTER ── */
+footer{background:var(--brown);color:rgba(255,255,255,.55);text-align:center;padding:2rem 1rem;font-size:.8rem}
+footer strong{color:var(--goldL);font-family:'Playfair Display',serif}
+footer p{margin:.2rem 0}
+footer a{color:var(--goldL);text-decoration:none}
+
+@media(max-width:580px){
+  .ev-year{flex:0 0 58px;font-size:.73rem}
+  .dh-era{font-size:.9rem}
+  .people-grid{columns:1}
+  .hero-stats{gap:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero-cross" viewBox="0 0 48 48" fill="none" stroke="rgba(184,145,58,.75)" stroke-width="2.5" stroke-linecap="round">
+    <line x1="24" y1="4" x2="24" y2="44"/><line x1="10" y1="16" x2="38" y2="16"/>
+  </svg>
+  <h1>Atco United Presbyterian Church<span>Atco, New Jersey &middot; Founded 1867</span></h1>
+  <p class="hero-quote">&ldquo;We were ordinary people, with an extraordinary amount of talent and a determination to build a Congregation to serve Our Father in Heaven.&rdquo;<span class="hero-attr">&mdash; Mrs. Gregory (Karen Duble) Schlachter</span></p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>1851</strong><span>Services Begin</span></div>
+    <div class="hero-stat"><strong>1867</strong><span>Church Founded</span></div>
+    <div class="hero-stat"><strong>13</strong><span>Charter Members</span></div>
+    <div class="hero-stat"><strong>175+</strong><span>Years of Faith</span></div>
+    <div class="hero-stat"><strong>44</strong><span>Pastors Served</span></div>
+  </div>
+</header>
+
+<!-- NAV BAR -->
+<nav class="nav-bar">
+  <a href="#contemporary">Church Today</a>
+  <a href="#timeline">Full Timeline</a>
+  <a href="#pastors">Pastors</a>
+  <a href="#music">Music Heritage</a>
+  <a href="#people">People &amp; Families</a>
+</nav>
+
+<!-- CONTEMPORARY -->
+<section id="contemporary" class="contemporary">
+  <div class="inner">
+    <h2 class="sec-head">The Church Today<em>Current ministry, programs &amp; contact &mdash; 2025</em></h2>
+    <div class="contemp-grid">
+
+      <div class="c-card">
+        <h3>&#128205; Find Us</h3>
+        <p><strong>2259 Atco Ave</strong><br>Atco, NJ 08004<br>
+        &#128222; <a href="tel:8567675602">(856) 767-5602</a><br>
+        &#9993; <a href="mailto:atcopres@aol.com">atcopres@aol.com</a><br>
+        &#127760; <a href="https://www.atcopres.org" target="_blank">atcopres.org</a></p>
+        <p style="margin-top:.5rem">
+          <a href="https://www.facebook.com/AtcoPres" target="_blank">Facebook</a> &middot;
+          <a href="https://www.instagram.com/atcopresbyterianchurch/" target="_blank">Instagram</a> &middot;
+          <a href="https://www.youtube.com/channel/UCdYEYf271ccOOAueTB2uIUA" target="_blank">YouTube</a>
+        </p>
+      </div>
+
+      <div class="c-card">
+        <h3>&#9201; Worship &amp; School</h3>
+        <p><strong>Sunday Worship:</strong> 9:30 AM<br>
+        <strong>Sunday School:</strong> 8:30 AM<br>
+        <strong>Children&rsquo;s Church:</strong> Sundays during service (downstairs)<br>
+        <strong>Office Hours:</strong> Tue&ndash;Fri 9 AM&ndash;3 PM</p>
+        <p style="margin-top:.5rem;font-style:italic;font-size:.82rem">&ldquo;Come and see that the Lord is good. His love endures forever. &mdash;Psalm 107:1&rdquo;</p>
+      </div>
+
+      <div class="c-card">
+        <h3>&#127942; Mission: TOWER</h3>
+        <div class="tower-pills">
+          <span class="tp"><strong>T</strong>each &mdash; Bible truths for daily living &amp; spiritual growth</span>
+          <span class="tp"><strong>O</strong>thers &mdash; Reach out in community &amp; world to meet needs</span>
+          <span class="tp"><strong>W</strong>itness &mdash; Share the excitement of Christ in our lives</span>
+          <span class="tp"><strong>E</strong>quip the Saints &mdash; Enable members to grow in leadership</span>
+          <span class="tp"><strong>R</strong>ejoice &mdash; Celebrate &amp; support in God&rsquo;s mighty Tower</span>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <h3>&#128106; Youth Programs</h3>
+        <ul>
+          <li><strong>Tots4Christ</strong> &mdash; Ages 0&ndash;4, 2nd Friday monthly (Sep&ndash;Jun, paused summer)</li>
+          <li><strong>Kids4Christ</strong> &mdash; Ages 4&ndash;14, 3rd Friday monthly</li>
+          <li><strong>Children&rsquo;s Church</strong> &mdash; Sunday mornings during service</li>
+          <li><strong>Youth Group</strong> &mdash; Grades 7&ndash;12, biweekly; MWA Retreat, 30 Hour Famine, Youth Sunday, mini golf</li>
+          <li><strong>Drama Kids</strong> &mdash; Confidence &amp; public speaking</li>
+          <li><strong>VBS</strong> &mdash; Vacation Bible School (summer)</li>
+        </ul>
+      </div>
+
+      <div class="c-card">
+        <h3>&#127929; Ministries &amp; Groups</h3>
+        <ul>
+          <li><strong>Bluebirds</strong> &mdash; Women&rsquo;s outreach; cards, visits, encouragement to shut-ins. Last Thursday monthly, 1:30 PM (Sep&ndash;Spring)</li>
+          <li><strong>Chancel Choir</strong> &mdash; Sep&ndash;Memorial Day; Thursday rehearsals 7:30 PM</li>
+          <li><strong>Atco Christ Chimes</strong> &mdash; Handbell choir directed by Patrick Riley</li>
+          <li><strong>Koinonia</strong> &mdash; Small home group Bible studies throughout the Atco area</li>
+          <li><strong>Greet &amp; Pray</strong> &mdash; Thursdays 7 PM via Zoom</li>
+          <li><strong>Lunch Bunch</strong> &mdash; Fellowship luncheon</li>
+        </ul>
+      </div>
+
+      <div class="c-card">
+        <h3>&#10084; Outreach &amp; Missions</h3>
+        <ul>
+          <li><strong>Food Bus Ministry</strong> &mdash; Free groceries, prayer &amp; smiles to those in need; monthly to Greater Calvary Baptist, West Atco</li>
+          <li><strong>CWS Blankets</strong> &mdash; Church World Service warmth ministry</li>
+          <li><strong>Angel Tree</strong> &mdash; Salvation Army Christmas gifts for children</li>
+          <li><strong>Thanksgiving Baskets</strong> &mdash; Holiday meals for neighbors</li>
+          <li><strong>Seeds of Hope</strong> &mdash; Camden ministry to inmates &amp; homeless</li>
+          <li><strong>Presbyterian Disaster Assistance</strong></li>
+          <li><strong>Choices of the Heart</strong> &mdash; Pregnancy support</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH BAR -->
+<div class="controls" role="search" aria-label="Search and filter timeline">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input type="search" id="search" placeholder="Search names, events, dates, topics (e.g. Snyder, organ, 1889)&hellip;" aria-label="Search church history"/>
+    </div>
+    <div class="filters">
+      <span class="filter-label">Filter:</span>
+      <button class="fbtn active" data-cat="all">All</button>
+      <button class="fbtn" data-cat="org">Organization</button>
+      <button class="fbtn" data-cat="pastor">Pastors</button>
+      <button class="fbtn" data-cat="building">Buildings</button>
+      <button class="fbtn" data-cat="community">Community</button>
+      <button class="fbtn" data-cat="faith">Faith Life</button>
+      <button class="fbtn" data-cat="music">Music</button>
+      <button class="fbtn" data-cat="now">Today</button>
+      <span id="res-ct"></span>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div id="timeline" class="timeline-wrap">
+  <h2 class="sec-head">Complete Historical Timeline<em>1851 &ndash; Present</em></h2>
+  <p class="timeline-hint">Click any era header to expand &middot; Click any event for full detail &middot; Use search above to highlight &amp; filter</p>
+  <div id="no-results"><p>No matching events found. Try different keywords or clear the search.</p></div>
+
+<!-- ════════════════════════════════════════════════
+     ERA 1: EARLY ROOTS 1851–1866
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="1">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">Early Roots &amp; Beginnings</span><span class="dh-years">1851&ndash;1866</span></div>
+  <div class="dh-right"><span class="dh-count">5 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="pastor" data-text="1851 rev charles ford presbyterian services waterford new jersey occasional visiting pastor missionary allen brown domestic synodical">
+<div class="event-summary"><span class="ev-year">1851</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">First Presbyterian Preaching Begins in Waterford</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Charles Ford, pastor of the Presbyterian Church of Williamstown, begins occasional preaching in the Waterford area. The Domestic Missionary Rev. Allen H. Brown also preaches here for approximately fourteen to fifteen years. No regular services are yet established. Rev. Ford ceases preaching around 1853 and returns again in 1861.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="civil war 1861 1865 andrew johnson 17th president healing reconstruction national context historical background post war">
+<div class="event-summary"><span class="ev-year">1861&ndash;1865</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Historical Context</span><span class="ev-title">The Civil War Era</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Our story begins against the backdrop of the United States Civil War &mdash; a time of great national healing and spiritual revival. Andrew Johnson (born 24 Dec 1808, died 15 July 1875), the 17th President, serves from 1865&ndash;1869. The period of Reconstruction that follows helps shape the communities of southern New Jersey, including Atco and Waterford.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1866 brace hammonton waterford services methodist society shared building presbyterian afternoon declined building fund william porter lot donation committee everett battelle james mcdougall">
+<div class="event-summary"><span class="ev-year">c. Oct 1866</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Organization</span><span class="ev-title">Rev. Brace Begins Waterford Services; Plans Made for a Church Building</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>About October 1866, Rev. F.R. Brace &mdash; who also labors at Hammonton, Elwood, Pleasant Mills, and Batsto &mdash; commences holding services once every two weeks in the Waterford Church building, shared in communion with the Methodist Society. As growth at Hammonton demands two services per Sabbath, Rev. Brace can no longer preach mornings at Waterford. A proposal to share the meetinghouse (with morning services available to Presbyterians) is declined by the Methodist Society.</p><p>Approximately $750 is contributed toward a dedicated Presbyterian building. A fair and festival raises an additional $250. Key donors: William Porter (lot, all siding, and glass), Andiciot Hay of Winslow (all shingles). Committee members appointed: William La Porter &middot; William Robinson &middot; Samuel S. Stiles &middot; Everett Battelle &middot; James Mac Dougall.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1866 atco first meeting organization presbyterian church bakers brothers store wellington hall woodland hand atco house hotel thomas richards fourth presbytery philadelphia new school board trustees mcharg talcott green wakelee">
+<div class="event-summary"><span class="ev-year">1866</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Organization</span><span class="ev-title">Three Meetings Lead to the Organization of the Atco Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The first meeting to consider organizing a Presbyterian church in Atco assembles in the hall above Wellington &amp; William &ldquo;Baker&rsquo;s Brother Store&rdquo; (southeast corner of Atco Ave &amp; Raritan Ave., now owned by Mr. Charles A. Woodland, Esq.). A second meeting is held in the parlor of Mr. John E. Hand&rsquo;s house (Atco Ave &amp; Fifth Street). At a third meeting in the &ldquo;Atco House&rdquo; hotel (corner of Atco Ave &amp; Atlantic Ave &mdash; the first hotel in Atco, built by Thomas Richards Jr., later destroyed by fire), the organization of the First Presbyterian Church of Atco is consummated under the care of the Fourth Presbytery of Philadelphia, PA (New School).</p><p><strong>First Board of Trustees:</strong> Mr. Thomas Richards Jr. &middot; Mr. Peter McHargh &middot; Mr. M.A. Wakelee &middot; Mr. W.O. Talcott &middot; Mr. Henry A. Green</p><p>Note: Around 1827, Thomas Richards Jr. had founded the Jackson Glass Works and established the Atlantic Transportation Company &ldquo;ATCO,&rdquo; bringing the Camden &amp; Atlantic Railroad through the area &mdash; giving Atco its very name.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="25 april 1866 waterford presbyterian church organized william robinson elder charter members founding heggan battelle mcdougall porter">
+<div class="event-summary"><span class="ev-year">25 Apr 1866</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Waterford</span><span class="ev-title">First Presbyterian Church of Waterford Formally Organized</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Presbytery committee meets at Waterford at 3 PM with Rev. Charles Ford as Moderator. <strong>Charter members:</strong> Everett Battelle (ordained Ruling Elder, 5 Nov 1869) &middot; James MacDougall &amp; wife Eliza &middot; William Robinson &amp; wife Calcina &middot; Caroline Barnard &middot; Miss Mary H. Porter &middot; Alexander Heggan. William Robinson is unanimously elected Senior Ruling Elder.</p></div></div>
+
+</div></div><!-- /era 1 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 2: FOUNDING 1867–1875
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="2">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">The Founding Era</span><span class="dh-years">1867&ndash;1875</span></div>
+  <div class="dh-right"><span class="dh-count">14 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="org" data-text="november 17 24 1867 organization first presbyterian church atco 13 charter members clinton dewitt carpenter james alton fourth presbytery philadelphia new school loomis green wakelee gould childs sloan hand">
+<div class="event-summary"><span class="ev-year">Nov 1867</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Founding</span><span class="ev-title">First Presbyterian Church of Atco Formally Organized &mdash; 13 Charter Members</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>On November 17th and 24th, 1867, meetings result in the official organization of the First Presbyterian Church of Atco under the 4th Presbytery of Philadelphia, PA (New School). Mr. Clinton Dewitt Carpenter and Mr. James E. Alton are elected as Ruling Elders. <strong>Original Charter Members:</strong> Mrs. Mary R. Loomis &middot; Mr. C. DeWitt Carpenter &middot; Mrs. A. Carpenter &middot; Professor Henry A. Green &middot; Mr. J.E. Alton &middot; Mrs. L. Alton &middot; Mrs. T. Childs &middot; Mrs. Thankful Gould &middot; Miss Clara Gould &middot; Miss Mary E. Gould &middot; Mrs. P.S. Wakelee &middot; Mrs. L.M. Green &middot; Mr. A. McHarg &amp; Mrs. Margaret McHarg.</p>
+<div class="eq">&ldquo;In many respects those were days of small things, of busy hands, and of home perplexities. Hard work and tired bodies were far more common than cash, and to live as Christ&rsquo;s men under such circumstances is not only a severe test, but a high privilege.&rdquo; &mdash; Rev. William L. Squier, 39th Anniversary Address, 1906</div></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="samuel loomis first pastor november 1867 september 1868 health failing vineland founding minister">
+<div class="event-summary"><span class="ev-year">Nov 1867</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Samuel Loomis &mdash; First Official Pastor</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Samuel Loomis, who had been largely instrumental in founding and fostering the First Presbyterian Church of Vineland, NJ, is employed as the first Minister of the Atco Church. He resides at Atco Ave &amp; 5th Street. His failing health and the languishing state of the settlement bring his work to a standstill early in 1868.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="11 october 1868 first official session sepional record atco church ed newberry moderator mcharg giddings talcott thomas richard building grounds committee plant brooklyn lafayette avenue dismissed">
+<div class="event-summary"><span class="ev-year">11 Oct 1868</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Session</span><span class="ev-title">First Official Session Record of the Atco Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Session (Sepional) meets at the call of the Moderator. Present: Rev. E.D. Newberry (Moderator, 4th Presbytery of Philadelphia), and Ruling Elders James E. Alton and Clinton Dewitt Carpenter. Attending as first Building &amp; Grounds Committee: Mr. Peter McHargh &middot; Mr. S. Gibbings &middot; Mr. W.O. Talcott &middot; Mr. Thomas Richards Jr. By letter from Lafayette Avenue Presbyterian Church, Brooklyn, NY: Mr. L.W. Plant and Mrs. Lizzie Plant enrolled.</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="1868 1869 church building construction raritan avenue bartram clifford atco dedication march 1869 richards estate donated land ED newberry dedication first sunday 32 by 50 feet sunday school noon">
+<div class="event-summary"><span class="ev-year">1868&ndash;1869</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">First Church Edifice Built &amp; Dedicated on Raritan Avenue</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Richards Estate donates one acre of ground between Bartram and Clifford Avenues for the church and parsonage. The foundation is laid for a church building 32 feet wide by 50 feet with the frame enclosed. Construction is delayed by the economic depression but is carried through to completion by Rev. E.D. Newberry of the 4th Presbytery of Philadelphia.</p><p>On the first Sunday of March 1869, the new church edifice on Raritan Avenue, between Bartram and Clifford Ave., Atco, Camden County, NJ, is dedicated to the worship and Glory of God by Rev. Newberry. Services thereafter held every Sabbath morning at 10&frac12; o&rsquo;clock; Sunday School at noon.</p>
+<div class="eq">&ldquo;Mrs. Deborah (Milhouse Kimber) Richards was a rare woman, and well deserving of the highest tribute of praise; a devoted Christian, a tactful and disinterested worker.&rdquo;</div></div></div>
+
+<div class="event-row" data-cat="music" data-text="1869 piano choir director mrs adam maude sloan first organist musician singing first recorded">
+<div class="event-summary"><span class="ev-year">1869</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Mrs. Adam (Maude) Sloan &mdash; First Musician</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Mrs. Adam (Maude) Sloan serves as Piano and Choir Director beginning in 1869 &mdash; the first recorded musician of the congregation. She will be formally recorded as Organist for Morning or Evening Worship Services in Session minutes on 12 January 1904, confirming her decades-long service.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="ED newberry pastor 1868 1873 atco berlin dedicated first church edifice supervised construction moderator fourth presbytery">
+<div class="event-summary"><span class="ev-year">1868&ndash;1873</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. E.D. Newberry &mdash; Atco &amp; Berlin</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Newberry oversees the completion of the first church building, dedicates the edifice in March 1869, and shepherds the young congregation through its critical formative years. He serves both Atco and Berlin, with students from Princeton Theological Seminary regularly supplying the pulpit. On 21 September 1868, he takes oversight of the flock and resumes the construction to completion.</p><p>5 January 1869: Board of Trustees meets. New members received by profession of faith: Mrs. Julia Giddings, Miss Isabella Hamilton, Mr. Amos Griffins, Mr. Byron Ellsworth. Also by letter from Congregational Church of Springfield, MA: Mrs. Julia Giddings.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1870 old school new school merger general assembly united presbyterian waterford atco combined new school denomination reunion 1838 split ended">
+<div class="event-summary"><span class="ev-year">1870</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Denomination</span><span class="ev-title">Old &amp; New School Presbyterians Reunite</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The General Assembly and Presbytery of the USA reunites, ending the Old School/New School split that had existed since 1838. The Waterford Church (Old School) and Atco Church (New School) are now brought together under unified New School policies, rules, and regulations.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="ulysses grant president 1869 reportedly slept atco garden state new jersey 18th president local history lore">
+<div class="event-summary"><span class="ev-year">1869</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Local Lore</span><span class="ev-title">President Grant Reportedly Visits Atco</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Ulysses S. Grant (27 Apr 1822 &ndash; 23 July 1885), the 18th President of the United States, is reported to have slept in Atco during one of his visits through the &ldquo;Garden State&rdquo; of New Jersey. The specific location is unknown in local records.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="james shinn pastor 1873 1877 communion atco berlin waterford old church bartram atlantic avenue salary increase declined">
+<div class="event-summary"><span class="ev-year">1873&ndash;1877</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. James G. Shinn &mdash; Atco, Berlin &amp; Waterford</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>4 January 1874: First Session and Congregational meetings held in the &ldquo;Old Church&rdquo; on the corner of Bartram &amp; Atlantic Avenue. Rev. Shinn faithfully administers the Lord&rsquo;s Supper quarterly and guides new members through profession of faith at both Atco and Waterford. In July 1877, Rev. Shinn requests a $1.00-per-week salary increase. The Board of Trustees declines this call, and Rev. Shinn concludes his ministry.</p><p><strong>Members received during Shinn&rsquo;s ministry include:</strong> Mr. &amp; Mrs. Adam R. Sloan &middot; Miss Carrie Maria Alton &middot; Mrs. Maria Louisa Franks &middot; Mr. William Sloan &middot; Mr. &amp; Mrs. Conrad &amp; Hannah Kelling &amp; daughter Lizzie &middot; Mr. &amp; Mrs. Christian &amp; Frederika Leman &middot; Mrs. Anna Mary Bishop &middot; Mr. Edward Collings and wife.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="panic 1873 financial depression economic hardship railroad boom coinage act new jersey congregation sacrifice balance 60 cents treasurer 1875">
+<div class="event-summary"><span class="ev-year">1873&ndash;1879</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Context</span><span class="ev-title">The Panic of 1873 &mdash; National Economic Hardship</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A North American financial panic caused by the Coinage Act of 1873 and a railroad boom creates severe economic hardship. The congregation navigates lean years with remarkable faith &mdash; the 10 June 1875 Board of Trustees meeting reports a church balance of just $0.60.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1879 atco library museum association natural history society george hancock nelson varnum wellington baker henry green skinner stone jug atlantic avenue fair 1879 dessima schleinkofer notes temperance yankees">
+<div class="event-summary"><span class="ev-year">1879</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Atco Library &amp; Museum Association Founded; Community Fair Held</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The &ldquo;Atco Library and Museum Association&rdquo; is organized, with first officers: George W. Hancock (President), Nelson Varnum (VP), Wellington Baker (Secretary), E.C. Scott (Treasurer), and directors including L.W. Plant, A.B. Thatcher, A. Wakeley, B.F. Marshall, and H.G. Tyrell. Its moving spirit is Henry A. Green, whose private collection forms the base.</p><p>The &ldquo;Atco Fair&rdquo; is held September 5&ndash;9, 1879, partly in a tent and partly in the Presbyterian Church (pews removed), featuring fruits, vegetables, needlework by the Atco ladies (including Ladies Guild), and foreign woods, minerals, shells, and fossils. A visiting editor from Vineland notes: &ldquo;Temperance and industry, with skill and culture, has made this small garden spot in the Jerseys.&rdquo;</p><p>Eleven years later, the organization is reorganized as the &ldquo;Atco Natural History Society.&rdquo; A later building on Atlantic Ave between Bartram and Atco Ave, facing the railroad, becomes known as the &ldquo;Stone Jug.&rdquo; Based on notes by Dessima Schleinkofer, 1957, written by Arthur D. Pierce.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="juvenile kings daughters 1888 hospital cooper camden blackberries fruit cheer cards offering worthy persons shut ins outreach">
+<div class="event-summary"><span class="ev-year">1888</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Outreach</span><span class="ev-title">Juvenile King&rsquo;s Daughters &mdash; Ministry to Hospital Patients</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Juvenile King&rsquo;s Daughters of Atco, NJ sends a crate of blackberries to patients at Cooper Hospital in Camden, NJ (reported in the Camden County Courier, 28 July 1888). The group takes up an offering at each meeting &ldquo;for the purpose of building a supply in our treasury that we might be able to send flowers, fruit, card or wrapping to any worthy person in need of cheer.&rdquo;</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="james mcdougall ruling elder waterford scotland born inverness 1824 farming superintendent seed farm 40 years died march 1917 heart failure prayer batsto mill cemetery 93 years old tribute memorial">
+<div class="event-summary"><span class="ev-year">Memorial</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Memorial</span><span class="ev-title">James Mac Dougall (1824&ndash;1917) &mdash; First Ruling Elder of Waterford</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Born in Inverness, Scotland on 24 March 1824, James Mac Dougall crossed the sea in 1859, settling in America as Superintendent of a Seed Farm at Waterford, NJ. His family grew to six sons and six daughters. When the Waterford Church was organized on 25 April 1866, he served as Trustee. He was ordained as Ruling Elder on 5 November 1869 and served faithfully for 40 years &mdash; visiting Atco every Sabbath when Communion was administered after Elder Carpenter departed in 1876.</p><p>He died suddenly of heart failure on Friday night, 2 March 1917, while on his knees in prayer at his home in Waterford, at nearly 93 years of age. His funeral was conducted by Rev. Charles G.E. Chilton. He is interred at Batsto Mill Cemetery. Dated 17 April 1917, signed by Frances J. Collier.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1894 membership roll 1867 1928 session minutes atco families charter early families 136 persons 39 years all names professions faith letter transfer">
+<div class="event-summary"><span class="ev-year">1867&ndash;1906</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Records</span><span class="ev-title">Original Session Minutes Book 1867&ndash;1928 &mdash; Complete Membership</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The original First Presbyterian Church of Atco Session Minutes Book (1867&ndash;1928) records 136 persons received in the first 39 years: 113 through profession of faith, 13 by letter from Presbyterian churches, 10 from other denominations. Early members documented include: Loomis &middot; Hamilton &middot; Carpenter &middot; Alton &middot; Gould &middot; Wakelee &middot; Green &middot; McHarg &middot; Giddings &middot; Ellsworth &middot; Van &middot; Beebee &middot; Sloan &middot; Holbeck &middot; Schleinkofer (Theodore, Dessima, Susan, Christina, Mary, John, Elizabeth, Lana, Evelyn, Norman, Maretta, Ruth) &middot; Varnum (C. Eddy, Nelson, Joseph, James, Ella, Clarence) &middot; Day &middot; Wynocker &middot; Turrell &middot; Bodine &middot; Gifford &middot; Ottinger &middot; Conrad &middot; Shendock &middot; Regn &middot; Frankle &middot; Brodbeck &middot; Githens &middot; Holton &middot; Hand &middot; Richards &middot; Battelle &middot; Chorpenning &middot; and many more.</p></div></div>
+
+</div></div><!-- /era 2 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 3: PERSEVERANCE 1876–1906
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="3">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">Perseverance &amp; Recovery</span><span class="dh-years">1876&ndash;1906</span></div>
+  <div class="dh-right"><span class="dh-count">15 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="building" data-text="1883 church remodeled interior partition vestibule chimney seats plastering cost 268 ladies aid gibson princeton seminary renovation repairs">
+<div class="event-summary"><span class="ev-year">1883</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">Old Church Extensively Remodeled</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>During the ministry of Rev. J.R. Gibson (Princeton Seminary student), major renovations are carried out at the Old Church on Bartram &amp; Atlantic Ave: re-plastering with two coats, a partition at the west end creating a vestibule, new closet, stairs to the cellar, repaired chimney, repaired seating, matting on aisles, new coal stove, and organ repairs. Total cost: $268.75 ($232.39 from subscriptions; the balance from Sunday collections). Subscription includes $14 from the Ladies Aid Society and $84.99 from the Synodical Missionary, Rev. Allen H. Brown. An original photograph of the interior of the Old Church is later found by Mrs. Donald (Joan) Knoll.</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="4 april 1884 now having more inviting appearance 15 members large prosperous sunday school miller scott roll revised commission presbytery">
+<div class="event-summary"><span class="ev-year">4 Apr 1884</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">&ldquo;Now Having a More Inviting Appearance&rdquo;</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Session records note the church as &ldquo;now having a more inviting appearance&rdquo; with 15 members in the congregation but a &ldquo;large and prosperous&rdquo; Sabbath School. The membership roll is revised. Miller B. Scott, who had mislaid his New York Presbyterian letter but had regularly attended and desired to serve, is received into membership.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1885 1887 st johns protestant episcopal mission brethren dewitt loop hammonton sunday evening services science hall bartram atlantic avenue shared building janitor cost">
+<div class="event-summary"><span class="ev-year">1885&ndash;1887</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Community</span><span class="ev-title">St. John&rsquo;s Episcopal Mission Uses the Church for Sunday Evenings</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>From fall 1885 through summer 1887, the Brethren of St. John&rsquo;s Protestant Episcopal Mission, under Rev. De Witt C. Loop of Hammonton, hold Sunday evening services in the Presbyterian Church on the corner of Bartram and Atlantic Ave. The Presbyterians and Brethren share the janitor (Mr. Thoraces Orr) cost &mdash; $0.50 each, alternate months. At peak: Presbyterians 10 members, Episcopal 8 members, across 16 Sundays. The Mission closes in 1887.</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="21 may 1887 fire major destroys interior old church rebuilding curtains altar janitor lamps blazing camden county courier newspaper fortunately assistance">
+<div class="event-summary"><span class="ev-year">21 May 1887</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">Fire Strikes the Old Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A major fire breaks out on Sunday while the janitor is lighting the lamps for the evening service. The blazing curtains in the rear of the altar are torn down and thrown out the window before the flames spread. The Camden County Courier reports the incident. Rebuilding follows: nine thousand shingles ordered immediately for a new roof (August 1887), and a Belfry voted to be placed upon the church (September 1887) with other front improvements.
+</p><div class="eq">&ldquo;We will still move forward for God&rsquo;s work in Atco.&rdquo; &mdash; Annual Church Meeting, Oct 1887</div></div></div>
+
+<div class="event-row" data-cat="faith" data-text="7 october 1889 seven trustees financial crisis nearly closed doors pooled resources adam sloan thomas richard william triol george schleinkofer talcott stephen van charles woodland donated 165 dollars saved church">
+<div class="event-summary"><span class="ev-year">7 Oct 1889</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Faith</span><span class="ev-title">Seven Men Save the Church from Permanent Closure</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A severe financial crisis nearly causes the church to close permanently. Total cash on hand: $13.25. Seven of God&rsquo;s honorable men pool their personal resources, donating a combined $165 to ensure the congregation has a place to worship:</p><p><strong>Mr. Adam R. Sloan $50 &middot; Mr. Thomas Richards Jr. $25 &middot; Mr. William H. Triol $25 &middot; Mr. George Schleinkofer $20 &middot; Mr. Charles A. Woodland $15 &middot; Mr. W.O. Talcott $10 &middot; Mr. Stephen Van $10</strong></p>
+<div class="eq">&ldquo;We will still move forward for God&rsquo;s work in Atco.&rdquo;</div></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1890 1891 young people society christian endeavor YPSCE DI camp samuel semple organized spiritual life pledge bible prayer endeavor minister promise meeting">
+<div class="event-summary"><span class="ev-year">1890&ndash;1891</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Faith Life</span><span class="ev-title">Young People&rsquo;s Society of Christian Endeavor (Y.P.S.C.E.) Founded</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Under Rev. D.I. Camp as temporary pulpit supply, the Young People&rsquo;s Society of Christian Endeavor (Y.P.S.C.E.) is organized on 22 February 1891 &ldquo;for Christ and the Church.&rdquo; First meeting: 25 March 1891. The pledge: &ldquo;Trusting in the Lord Jesus Christ for strength, I promise Him that I will strive to do whatever He would like to have me do; that I will make it the rule of my life to pray, and to read the Bible every day&hellip;&rdquo;</p><p>Active members include: Theodore Schleinkofer &middot; Theresa Day &middot; Emma Duble &middot; Grace Riley &middot; C.E. Varnum &middot; Lillian Chorpenning &middot; Dessie Hand &middot; Grace Riley. Activities include picnics at Clementon Lake Park, musicals, Union meetings with the Waterford Society, and missions support including contributions to the N.J. Christian Endeavor Union and the Board of Home Missions.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="18 june 1892 first church picnic clementon lake park new jersey recorded tradition sunday school wagon atco house 7 am annual">
+<div class="event-summary"><span class="ev-year">18 Jun 1892</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Tradition</span><span class="ev-title">First Recorded Church Picnic &mdash; Clementon Lake Park</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Y.P.S.C.E. holds its first official picnic at Clementon Lake Park, Clementon, NJ. The wagon departs from the Atco House at 7&ndash;7:30 AM. This launches a beloved tradition of Annual Sunday School Picnics that will draw 150 or more attendees in later years, moving between Clementon Lake Park, Centerton Park, and Mays Landing.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="20 august 1892 george schleinkofer frederica freda received church roman catholic lutheran confession faith received communion key family">
+<div class="event-summary"><span class="ev-year">20 Aug 1892</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Membership</span><span class="ev-title">Schleinkofer Family Received into Full Communion</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Mr. George Schleinkofer (formerly Roman Catholic) and Mrs. Frederica (Freda) Schleinkofer (formerly Lutheran) are received into full communion on confession of faith. The Schleinkofer family will become one of the most influential in the church&rsquo;s entire history, spanning generations of service.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="december 1897 christmas eve tradition george frederica schleinkofer hundred pounds candy box oranges annual gift congregation tradition">
+<div class="event-summary"><span class="ev-year">Dec 1897</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Tradition</span><span class="ev-title">Schleinkofer Christmas Candy Tradition Begins</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>George and Frederica Schleinkofer of Atco begin the cherished tradition of providing one hundred pounds of candy and one box of oranges to the entire church congregation at Christmas &mdash; a generous annual gift that becomes one of the most beloved traditions of the congregation.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1898 numbered envelope system tithing weekly prayer meetings josiah stevenson per capita tax international lessons life of christ 1 cent stamp">
+<div class="event-summary"><span class="ev-year">1898</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Stewardship</span><span class="ev-title">Numbered Envelope System &amp; Structured Prayer Meetings</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Under Rev. Josiah T. Stevenson, the Board of Trustees unanimously adopts the Numbered Envelope System for church tithing. Weekly Prayer meetings occur alongside a three-month study of &ldquo;Life of Christ&rdquo; from International Lessons. A US postage stamp costs $0.01. Presbyterial contribution for Per Capita Tax is $0.40 per member by December 1902.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1903 october junior society christian endeavor reorganized dessima schleinkofer children parish heroic patience perseverance mold lives">
+<div class="event-summary"><span class="ev-year">Oct 1903</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Youth</span><span class="ev-title">Junior Society of Christian Endeavor Reorganized Under Mrs. Schleinkofer</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Junior Society of Christian Endeavor is reorganized and presided over by Mrs. Theodore (Dessima) Schleinkofer. Session records describe her devotion as &ldquo;heroic patience and perseverance&rdquo; in shaping children&rsquo;s lives. The Junior CE Society becomes &ldquo;an invaluable factor in molding the lives of the parish children into lives of larger and fuller usefulness for Christ and the Church.&rdquo;</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="1903 1904 bell repaired joseph varnum charles woodland labor love call worshippers divine service restored belfry">
+<div class="event-summary"><span class="ev-year">10 Aug 1903</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Church Bell Restored &mdash; Labor of Love by Varnum &amp; Woodland</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Thanks are extended to Mr. Joseph W. Varnum and Mr. Charles A. Woodland for their &ldquo;labor of love&rdquo; in repairing the church bell and restoring it to call worshippers to divine service.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="william lorenzo squier 1904 1911 pastor 39th anniversary historical address 1906 sunday school picnic clementon lake 150 attending thomas richard death tribute">
+<div class="event-summary"><span class="ev-year">1904&ndash;1911</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. William L. Squier &mdash; 39th Anniversary Historical Address (1906)</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>8 August 1906: Annual Sunday School Picnic at Clementon Lake Park draws 150 attendees.</p><p>18 November 1906: Rev. Squier delivers the Historical Address at the 39th Anniversary of the organization of the First Presbyterian Church of Atco.</p><p>18 January 1910: Mr. Thomas Richards Jr. (29 Apr 1828 &ndash; 18 Jan 1910) passes from this earth. A letter of appreciation is sent, thanking him and the Richards Estate for nearly 30 years of financial assistance &mdash; &ldquo;doing always the next thing in order that the Church might not die.&rdquo;</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1906 henry green professor influential untiring sunday school library education community atco natural history society 39th anniversary">
+<div class="event-summary"><span class="ev-year">1906</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Tribute</span><span class="ev-title">Professor Henry A. Green &mdash; Pillar of the Early Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><div class="eq">&ldquo;A friend and worker that deserves to be remembered as one who contributed largely and ostentatiously to the Church and Sunday School. It was to his wise and indefatigable exertions that the school and its library became such an efficient factor for education and usefulness to the Church and to the community at large.&rdquo; &mdash; Rev. Squier, 39th Anniversary Address</div><p>By 1906, Prof. Green lives in Tryon, North Carolina, having moved from Atco in December 1882. As founding Secretary and Treasurer of the Board of Trustees, he shaped the educational mission of the congregation from its very beginning.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="sunday school ledger 1891 1906 teacher schleinkofer hand duble varnum giddings chorpenning peacock regn brodbeck families children attendance classes">
+<div class="event-summary"><span class="ev-year">1891&ndash;1906</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Sunday School</span><span class="ev-title">Sunday School Ledger Records &mdash; Generations of Families</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>An original Sunday School Ledger records detailed attendance from July 1891 through January 1906. Teachers include: Rev. J. Stevenson &middot; Mrs. Theodore Schleinkofer &middot; Miss M. McHarg &middot; Miss Mary Schleinkofer &middot; Miss Carrie Hand &middot; Miss Emma Duble &middot; Mrs. James Hand &middot; Mrs. Chorpenning. Student families: Schleinkofer &middot; Varnum &middot; Peacock &middot; Rukaber &middot; Duble &middot; Giddings &middot; Koehler &middot; Regn &middot; Brodbeck &middot; Heebner &middot; Offerberger &middot; Shoemaker &middot; O&rsquo;Neal &middot; Chorpenning &middot; Hurry &middot; Clements &middot; Squier &middot; McCormick &middot; Hand &middot; Stadelmaier &middot; Day &middot; Shendock &middot; Frankle &middot; Lefler and many others.</p></div></div>
+
+</div></div><!-- /era 3 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 4: NEW BUILDING 1907–1928
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="4">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">Building a New Home</span><span class="dh-years">1907&ndash;1928</span></div>
+  <div class="dh-right"><span class="dh-count">14 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="community" data-text="27 september 1916 ladies aid ladies guild new society organized meetings first third tuesday president scripture prayer fundraising fellowship womens ministry">
+<div class="event-summary"><span class="ev-year">27 Sep 1916</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">The Ladies&rsquo; Guild Formally Organized</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A new society &mdash; The Ladies&rsquo; Aid, soon renamed &ldquo;The Ladies Guild&rdquo; &mdash; is organized to meet on the first and third Tuesday of each month in members&rsquo; homes at 2:30 PM. All meetings begin with Scripture reading and the Lord&rsquo;s Prayer. The Guild becomes an indispensable pillar of church life for generations.</p><p>Activities over the decades include: Oyster Suppers &middot; Strawberry Suppers &middot; Tureen (Covered Dish) Suppers &middot; St. Patrick&rsquo;s Suppers &middot; Coin Calendar drives &middot; Bazaars &middot; regular Building Fund donations. Key officers include Presidents: Mrs. C.B. Githens &middot; Mrs. Charles Holton &middot; Mrs. B.A. Hand &middot; Mrs. John Schleinkofer &middot; Mrs. H. Wyle &middot; Mrs. Theodore Schleinkofer. In March 1964, renamed &ldquo;United Presbyterian Women&rsquo;s Association.&rdquo;</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="12 october 1915 proposed new edifice house of worship rev cook joshua jefferis architect camden adam sloan theodore schleinkofer subscription 1916 january lot william murray atco avenue second street 2000 dollars">
+<div class="event-summary"><span class="ev-year">1915&ndash;1916</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">Plans &amp; Lot Secured for a New Church Edifice</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>12 October 1915: Preparations are presented for a proposed new house of worship. Rev. C.D. Cook is instrumental. Mr. Adam R. Sloan offers the services of architect Mr. Joshua Jefferis of Camden, NJ, who charges only carfare. Theodore Schleinkofer circulates the subscription list.</p><p>January 1916: A diagram of the lot on Atco Avenue &amp; Second Street is conveyed by Mr. William A. Murray of Atco, NJ for $2,000. October 1911: On motion of Mrs. Theodore (Dessima) Schleinkofer, the Board of Trustees deposits $100 from the Treasury into a new building fund, followed by $211.40 from the Ladies Guild Christmas Bazaar in Comanche Hall.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="february 1922 organization work fun club mrs john schleinkofer sunday school class bluebirds young women sixteen members constitution happiness motto 33 members 1923">
+<div class="event-summary"><span class="ev-year">Feb 1922</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Bluebirds Founded &mdash; &ldquo;Spreading Joy in the Name of the Lord&rdquo;</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The &ldquo;Work &amp; Fun Club&rdquo; (members of Mrs. John Schleinkofer&rsquo;s Sunday School Class) and a new organization called &ldquo;Bluebirds&rdquo; are both organized in February 1922. The Bluebirds&rsquo; first meeting has 16 members sign the constitution. By June 1923, membership grows to 33. Motto: &ldquo;Happiness to Others.&rdquo; The Bluebirds first play handbells publicly in the 1980s, performing &ldquo;Morning Has Broken.&rdquo; <em>This ministry is still active in 2026.</em></p></div></div>
+
+<div class="event-row" data-cat="building" data-text="23 october 1921 cornerstone laid new church atco avenue second street items placed within 5 december 1921 first meeting new building">
+<div class="event-summary"><span class="ev-year">23 Oct 1921</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">Cornerstone Laid for the New Church Building</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The cornerstone of the new church is laid at the Atco Avenue &amp; Second Street location. A list of items placed within the cornerstone is preserved for historical review. On December 5, 1921, the first Church &amp; Congregational Meeting is held in this new building.</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="9 july 1922 dedication new church atco avenue second street rev muthard installed pastor robert macbride west jersey presbytery moderator princeton seminary 10 30 am">
+<div class="event-summary"><span class="ev-year">9 Jul 1922</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">New Church Dedicated &amp; Rev. Muthard Installed</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>At 10:30 AM, a Service of Dedication of the &ldquo;New Church&rdquo; on Atco Avenue &amp; Second Street is held. Rev. R.E. Muthard (recent Princeton Seminary graduate) is installed as pastor. Rev. Robert I. MacBride, Ph.D., Moderator of West Jersey Presbytery, presides. A monumental chapter after decades of planning, fundraising, and faithful sacrifice. On 3 December 1922, the church unites with the Atco Methodist Church for a special Men&rsquo;s Service &mdash; the first recorded ecumenical interaction.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="30 november 1922 55th anniversary celebration gifts 500 oak communion table two pianos christian endeavor bluebirds cups tray communion men class chairs birthday">
+<div class="event-summary"><span class="ev-year">30 Nov 1922</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Anniversary</span><span class="ev-title">55th Anniversary &mdash; Birthday Gifts &amp; Dedications</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The 55th Anniversary is celebrated with birthday gifts totaling approximately $500. Gifts include: a beautiful Oak Communion Table (memorial to the late Joseph R. Varnum, former Elder) &middot; Two pianos presented by the Christian Endeavor Society and the Bluebirds &middot; Additional Communion cups and tray by the Men&rsquo;s Class &middot; Beautiful chairs purchased by various classes &middot; Two Oak pedestals as a &ldquo;Memorial&rdquo; by the congregation.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="16 march 1923 baptismal font dedicated loving memory margaret maggie mcharg original board trustees member faithful service">
+<div class="event-summary"><span class="ev-year">16 Mar 1923</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Dedication</span><span class="ev-title">Baptismal Font Dedicated &mdash; In Memory of Miss McHargh</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A beautiful baptismal font is dedicated in loving memory of Miss Margaret (Maggie) J. McHargh, whose family had faithfully served the church from its very founding as members of the original Board of Trustees.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="2 march 1925 missionary society organized roll books 1925 1936 treasurer records support missions outreach world">
+<div class="event-summary"><span class="ev-year">2 Mar 1925</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Missions</span><span class="ev-title">Missionary Society Organized</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A Missionary Society is organized on 2 March 1925. Original Roll Books are kept from 8 April 1925 through 1936. In 1966, the church supports a Missionary from Thailand and Missionary Mr. Henry Ducher.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1926 8 january henry schwartz mary schwartz letter dismissal lutheran first presbyterian atco 1926 doctor house calls depression pies eggs payment almira avenue medical">
+<div class="event-summary"><span class="ev-year">9 Jan 1926</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Membership</span><span class="ev-title">Dr. Henry C. Schwartz Family Joins the Congregation</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Dr. Henry C. Schwartz joins by letter from the First Lutheran Church in Johnstown, PA. Mrs. Mary Schwartz joins by letter from Emmanuel Presbyterian Church of Philadelphia, PA. Dr. Schwartz becomes the only Medical Doctor in Atco for years, renowned for his house calls. During the Depression, he accepts &ldquo;Pies &amp; Eggs&rdquo; as payment. Their home and office are on Almira Avenue. Mrs. Schwartz joins the Ladies Guild in 1929 and serves as Guild Treasurer beginning 7 January 1931. Their children: Mrs. Drusilla (Schwartz) Lynch (ca.1927&ndash;1983) and Mr. Henry Clay Schwartz Jr. (&ldquo;Doc&rdquo;).</p></div></div>
+
+<div class="event-row" data-cat="building" data-text="16 january 1927 manse erected second street pastor joseph harrison first occupant stability ministry home">
+<div class="event-summary"><span class="ev-year">1927</span><span class="ev-tag" style="background:var(--tag-bld);color:var(--tag-bld-t)">Building</span><span class="ev-title">A Manse Erected Next to the Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A manse is built next door to the new church on Second Street. Rev. Joseph Harrison, who serves from 1927&ndash;1929, becomes the first pastor to occupy it &mdash; a new chapter of stability in pastoral ministry.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="17 may 1926 waterford township school graduation exercises church sanctuary community gathering place public ceremonies">
+<div class="event-summary"><span class="ev-year">17 May 1926</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Community</span><span class="ev-title">Waterford Township School Graduation Held in the Sanctuary</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Waterford Township School Graduation Exercises are held in the church sanctuary &mdash; demonstrating the church&rsquo;s important role as a central gathering place for the broader community.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1928 session minutes book 1867 1928 closed first presbyterian church atco original records waterford session 1859 1959 historical archives">
+<div class="event-summary"><span class="ev-year">31 Mar 1928</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Records</span><span class="ev-title">Original Session Minutes Book 1867&ndash;1928 Closes</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The original First Presbyterian Church of Atco Session Minutes Book (1867&ndash;1928) closes &mdash; a treasure covering 61 years of session meetings, member receptions and dismissals, baptisms, communions, and major decisions. A new book continues. The Waterford Presbyterian Church Session Minutes Book runs from 1859 through 1959.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1923 1928 alcyon park pitman sunday school picnic evangelistic thomas hauston two weeks 1924 sunday school picnics tradition annual community">
+<div class="event-summary"><span class="ev-year">1923&ndash;1928</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Annual Picnics at Alcyon Park; Evangelistic Services</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>1 August 1923: Annual Sunday School Picnic held at Alcyon Park in Pitman, NJ. 7 March 1924: Rev. Thomas Hauston invited to conduct a two-week Evangelistic Service, 5 Oct&ndash;24 Oct 1924. Sunday School picnics during the 1920s draw large attendance from Atco, Waterford, and surrounding communities.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="pre 1950 palm sunday hosanna parade children sanctuary king draws near ida wilson live green palms tradition worship service each year">
+<div class="event-summary"><span class="ev-year">Pre-1950</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Tradition</span><span class="ev-title">Palm Sunday &ldquo;Hosanna Parade&rdquo; Tradition Established</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Traditionally every Palm Sunday, a generous church member donates live green Palms. All children parade around the Church Sanctuary while the congregation sings &ldquo;The King Draws Near&rdquo; (music and lyrics by Ida Wilson). This beloved tradition continues through the decades.</p></div></div>
+
+</div></div><!-- /era 4 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 5: DEPRESSION YEARS 1929–1939
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="5">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">Depression Years &amp; Faithful Stewardship</span><span class="dh-years">1929&ndash;1939</span></div>
+  <div class="dh-right"><span class="dh-count">9 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="pastor" data-text="caleb pancoast 1929 1936 pastor depression economic good financial condition reduce indebtedness generosity centerton mays landing sunday school picnic steady leadership">
+<div class="event-summary"><span class="ev-year">1929&ndash;1936</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Caleb L. Pancoast &mdash; Steady Leadership Through the Depression</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Caleb Pancoast begins 3 April 1929. Despite the Great Depression (1931&ndash;1936), church records note: &ldquo;In spite of economic conditions &mdash; our Church was in a good financial condition &mdash; we were able to reduce our indebtedness through the generosity and hard work of the members.&rdquo; Sunday School picnics continue at Centerton Park and Mays Landing. Ladies Guild suppers (Oyster Suppers $0.50/person, Strawberry Suppers, Jigsaw Suppers, Tureen Suppers, Coin Calendar drives) fund steady Building Fund contributions of $50&ndash;$100 per meeting.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="6 april 1930 pipe organ dedicated evening worship service theodore schleinkofer gift building master kingdom resolution session beautiful tonal qualities appearance">
+<div class="event-summary"><span class="ev-year">6 Apr 1930</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Pipe Organ Dedicated &mdash; Gift of Theodore Schleinkofer</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A Pipe Organ is dedicated at the evening Worship Service, donated by Theodore Schleinkofer. The Session resolution states: &ldquo;We are profoundly grateful to Mr. Theodore Schleinkofer, a highly esteemed Elder of our Church, for the very generous gift&hellip;beautiful in both tonal qualities and appearance.&rdquo; A copy of the resolution is published in the local newspaper. The old organ is sold in October 1935 for $25. (Note: The Pipe Organ gift is formally acknowledged by Session resolution dated 30 March 1930.)</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="30 march 1930 session resolution theodore schleinkofer pipe organ gift profoundly grateful highly esteemed elder building master kingdom prayer resolution session minutes newspaper">
+<div class="event-summary"><span class="ev-year">30 Mar 1930</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Faith Life</span><span class="ev-title">Session Formally Honors Theodore Schleinkofer&rsquo;s Organ Gift</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><div class="eq">&ldquo;We, the Session for the First Presbyterian Church of Atco, New Jersey are profoundly grateful to Mr. Theodore Schleinkofer, a highly esteemed elder of our Church, for the very generous gift which he is making to the Church. That gift, which is a pipe organ, is beautiful in both tonal qualities and appearance. It is our earnest prayer that it will prove to be a most valuable asset in building up the work of the Master&rsquo;s Kingdom. It is also our prayer that the donor&rsquo;s life, family and all his interests will be abundantly favored by Providence.&rdquo; &mdash; Mr. John L. Ritter, Clerk of Session, pro tem</div></div></div>
+
+<div class="event-row" data-cat="music" data-text="28 march 1935 handel messiah hallelujah chorus page 77 senior choir dessima schleinkofer davis long jean shockley 1938 1956 1969 1977 1989 repeated tradition sacred music performance">
+<div class="event-summary"><span class="ev-year">28 Mar 1935</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Handel&rsquo;s Messiah First Performed by the Senior Choir</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>G.F. Handel&rsquo;s &ldquo;Messiah&rdquo; (Hallelujah Chorus, page 77) is performed for the first time by the Senior Choir under Mrs. Theodore (Dessima) Schleinkofer. This sacred musical tradition is repeated in <strong>1938 &middot; 1956 &middot; 1969 &middot; 1977 &middot; 1989</strong> &mdash; a cherished legacy of sacred music spanning more than half a century.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="18 november 1930 session by-law statement christian standards reverence gods house formal worship commitment rule">
+<div class="event-summary"><span class="ev-year">18 Nov 1930</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Governance</span><span class="ev-title">Session Passes By-Law on Standards of Reverence in God&rsquo;s House</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><div class="eq">&ldquo;The Session, feeling that it is their duty to uphold Christian standards of reverence in God&rsquo;s House, have passed a By-Law Statement.&rdquo;</div></div></div>
+
+<div class="event-row" data-cat="org" data-text="24 november 1932 65th anniversary celebration atco presbyterian church breeze saturday evening news article organized 1867 eubank sermon original structure volunteer labor good fellowship supper ladies">
+<div class="event-summary"><span class="ev-year">Nov 1932</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Anniversary</span><span class="ev-title">65th Anniversary &mdash; Newspaper Coverage &amp; Fellowship Supper</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Breeze &amp; Saturday Evening News reports: &ldquo;Scene of Anniversary Celebration at Atco Presbyterian Church &mdash; Organization Affected 65 Years Ago &mdash; Dr. Eubank Preaches Sermon at Impressive Service &mdash; Original Structure Erected by Volunteer Labor.&rdquo; A Good Fellowship Supper is served by the ladies in the Social Center on Tuesday evening.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1934 1946 coin calendar annual contribution drive total 75 cards york pa ladies guild stewardship hammonton orchestra dr wood entertainment supper fellowship">
+<div class="event-summary"><span class="ev-year">1934&ndash;1946</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Stewardship</span><span class="ev-title">Annual Coin Calendar Contribution Drive</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>75 Coin Calendar cards are distributed to all members and non-members each year. Yearly ingathering events feature covered dish suppers with guest entertainers (including the Hammonton Presbyterian Church Orchestra directed by Dr. Wood). Typical annual collections: $97&ndash;$107 for the Building Fund. First proposed by Mrs. Pancoast in November 1933; cards obtained from 1515 Monroe Street, York, PA.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="1937 1940 john castle pastor pastor charles cureton 1939 1945 waterford intermediate years">
+<div class="event-summary"><span class="ev-year">1937&ndash;1940</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastors</span><span class="ev-title">Rev. John C. Castle Jr. &amp; Rev. Charles L. Cureton</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. John C. Castle Jr. serves Atco 1937&ndash;1940. Rev. Charles L. Cureton serves Waterford 1939&ndash;1945 during the years leading toward unification.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="21 december 1932 john congdon ella endres married atco settled 1936 children louetta john jr george joy virginia 10 grandchildren hannaway officiated rev gordon hannaway">
+<div class="event-summary"><span class="ev-year">21 Dec 1932</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Family</span><span class="ev-title">The Congdon Family &mdash; Married &amp; Settled in Atco</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Mr. John Congdon (21 Nov 1907 &ndash; April 1992) of Tacoma, NJ marries Miss Ella (Endres) of Atsion (7 Oct 1910 &ndash; 21 Dec 1989), ceremony officiated by Rev. W. Gordon Hannaway. They settle in Atco in 1936. Children: Louetta (Congdon) Phillips (b.30 Sep 1933, married John Phillips 7 Apr 1956) &middot; John Jr. (b.17 May 1935) &middot; George (b.Nov 1937, married Gertrude (Trudi) Passarella, Nov 1968) &middot; Joy Diane (born and passed Nov&ndash;Dec 1945) &middot; Virginia (Ginny) Congdon Scharr (b.22 Feb 1947, baptized by Rev. Hannaway, married Elmer Scharr 26 Jun 1965 by Rev. Mont). 10 grandchildren as of 2017. Mr. John Congdon elected Ruling Elder 22 May 1960.</p></div></div>
+
+</div></div><!-- /era 5 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 6: HANNAWAY YEARS 1940–1963
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="6">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">The Hannaway Years &mdash; Growth &amp; Revival</span><span class="dh-years">1940&ndash;1963</span></div>
+  <div class="dh-right"><span class="dh-count">13 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="pastor" data-text="september 1940 rev w gordon hannaway pastor 23 years membership grew 100 man sundays legendary burning mortgage choir outreach manse garage parking lot hannaway rooms sunday school">
+<div class="event-summary"><span class="ev-year">20 Sep 1940</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. W. Gordon Hannaway &mdash; 23 Years of Legendary Ministry</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. W. Gordon Hannaway begins a 23-year pastorate (through 1 October 1963). Key milestones under his leadership:</p><p><strong>November 1942:</strong> Church mortgage burned &mdash; a celebrated milestone of financial freedom. <strong>100 Man Sundays</strong> are legendary in local church history. <strong>1945:</strong> Men&rsquo;s ministry plans the &ldquo;Hannaway Rooms&rdquo; to enlarge the church for the growing Sunday School. <strong>1959:</strong> Men&rsquo;s group expands the Manse on Second Street, builds a two-car garage, and paves the parking lot. The Chancel Choir is built up and expanded. Membership grows significantly under his warm, Christ-centered leadership.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1944 berlin presbyterian church dissolved membership invited atco church taunton haines avenue berlin 1930 1944 presbyterian historical society 425 lombard street philadelphia">
+<div class="event-summary"><span class="ev-year">1944</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Denomination</span><span class="ev-title">Berlin Presbyterian Church Dissolved &mdash; Members Welcome at Atco</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The First Presbyterian Church of Berlin, NJ (first reported 1868) is dissolved and dropped from the denominational roll in 1944. Its membership roll is invited to worship at Atco Church on Atco Ave. Related archival materials held at the Presbyterian Historical Society, 425 Lombard Street, Philadelphia, PA.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1947 1946 1951 pipe organ installed davis long westminster choir school organist choir director visual piano teacher mrs elizabeth mossop organist">
+<div class="event-summary"><span class="ev-year">1946&ndash;1951</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Mr. Davis Long &mdash; New Pipe Organ Installed; Westminster Choir School</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A new Pipe Organ is installed. Mr. Davis Long of the Westminster Choir School is hired as Choir Director (1946) and Organist (1947), serving until 1951. He also teaches Visual Arts and Piano. Mrs. Elizabeth Mossop of Atco serves as Organist until 1947.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1950s carillon bell speaker tower brimfield family eugene ewan christ lord risen today easter 6am community sunrise atco tradition trumpet">
+<div class="event-summary"><span class="ev-year">1950s</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Carillon Bell System Installed &mdash; Easter Sunrise Tradition</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>A carillon bell speaker system is installed in the church tower, donated by the Brimfield family. Organist Mr. Eugene Ewan plays &ldquo;Christ the Lord is Risen Today&rdquo; for the entire community to hear at 6 AM on Easter Sundays &mdash; a triumphant tradition heard throughout the Atco neighborhood. Mr. Ewan serves 1951&ndash;1954 before being drafted into military service.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1954 allen organ installed 1954 joe zook organist 1981 irene schleinkofer mcferran 1954 1974 dual organist ministry first allen organ">
+<div class="event-summary"><span class="ev-year">1954</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">First Allen Organ Installed &mdash; Zook &amp; McFerran Begin Dual Service</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>In 1954, the first &ldquo;Allen Organ&rdquo; is introduced. <strong>Mr. Joe Zook</strong> of Atco serves as Organist from 1954 until his sudden passing in 1981 &mdash; 27 years of faithful service. Simultaneously, <strong>Mrs. Lawrence (Irene Schleinkofer) McFerran</strong> of Atco serves as Organist from 1954 to 1974 (born 1926, died 1976). In fall 1958 for a few months, Mrs. Alexander (Mardi) Duble and Mrs. Harriett DeLanzo serve as sub-Organists.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1950s 1977 jr choir director mrs alexander mardi duble junior choir children 1977 gail passarella del monte take over 50 years">
+<div class="event-summary"><span class="ev-year">1950s&ndash;1977</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Jr. Choir Directors &mdash; Mardi Duble, Then Gail Passarella</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>Mrs. Alexander (Mardi) Duble</strong> of Atco serves as Jr. Choir Director from the 1950s until 1977. From 1977 through the present, <strong>Gail (Passarella) Del Monte</strong> of Atco (now Berlin, NJ) continues this ministry &mdash; a combined span of more than 50 years of faithful service directing the children&rsquo;s voices of the congregation.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="22 may 1960 new ruling elders edward snyder john congdon serve until 1963 deacon david brogden 1962 election session board">
+<div class="event-summary"><span class="ev-year">22 May 1960</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Leadership</span><span class="ev-title">New Ruling Elders: Mr. Snyder &amp; Mr. Congdon Elected</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>New Ruling Elders elected: <strong>Mr. Edward W. Snyder</strong> and <strong>Mr. John Congdon</strong> &mdash; both serve until 1963. 13 December 1962: Newly elected Deacon: Mr. Edward (Ed) Snyder and Mr. David (Dave) Brogden. 22 January 1967: New Ruling Elders elected: Mrs. Elizabeth D. Ray and Mr. Edward Snyder. Deacons elected/installed: Mr. David W. Brogden and Mrs. Mary Rapp. Mr. Snyder continues to serve as Ruling Elder through 1981 (Class of 1984).</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="15 january 1962 joint session trustees meeting lou zoppel fred fritz holton norman duble guy ranck franny duble harold ellsworth warren jensen walter giddings edward snyder john congdon art ward zan duble floor church basement organizations money members motivation four joint meetings per year">
+<div class="event-summary"><span class="ev-year">15 Jan 1962</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Session</span><span class="ev-title">Joint Session &amp; Trustees Meeting &mdash; Key 1962 Leadership</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Joint Meeting of Session &amp; Trustees at 8 PM, chaired by President Lou Zoppel. Present: Mr. Lou Zoppel &middot; Mr. Fred (Fritz) Holton &middot; Mr. Norman Duble &middot; Mr. Guy Ranck &middot; Mrs. Norman (Franny) Duble &middot; Mr. Harold Ellsworth &middot; Mr. Warren Jensen &middot; Mr. Walter Giddings &middot; Mr. Edward Snyder &middot; Mr. N. Giddings &middot; Mr. John Congdon &middot; Mr. Art Ward &middot; Mr. Harold Ellsworth &middot; Mr. Zan Duble. Topics: how organizations can raise money for the Church, member motivation. Motion to replace the church basement floor; decision to hold four joint meetings per year.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="november 1963 first ecumenical community thanksgiving service atco methodist assembly god pentecostal assumption roman catholic christ redeemer loving grace alliance all clergy tradition continues present">
+<div class="event-summary"><span class="ev-year">Nov 1963</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">First Ecumenical Community Thanksgiving Service Held</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The first recorded Ecumenical Community Thanksgiving Service includes all acting Clergy of the Atco Methodist Church on Atco Ave, Assembly of God Pentecostal Church on Jackson Road, and Atco Assumption Roman Catholic Church (now Christ the Redeemer Roman Catholic Church). Also included: Loving Grace Alliance (until it closed). <em>This tradition continues to the present day.</em></p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1966 1967 missionary thailand henry ducher camden composite west jersey presbytery life skills small children international missions outreach stanley mont">
+<div class="event-summary"><span class="ev-year">1966&ndash;1967</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Missions</span><span class="ev-title">International Mission Support &mdash; Thailand &amp; Camden</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>1966: The congregation supports a Missionary from Thailand and Missionary Mr. Henry Ducher. 1967: Rev. Stanley J. Mont serves as Director of the West Jersey Presbytery &ldquo;Camden Composite Missionary,&rdquo; teaching &ldquo;Life Skills&rdquo; to small children in Camden, NJ.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1950s 1960s vacation bible school vbs summer director mary rapp pastor mont ranch hope for boys youth group mission day trips bible study games cards">
+<div class="event-summary"><span class="ev-year">1950s&ndash;1960s</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Youth</span><span class="ev-title">Vacation Bible School &amp; Youth Programs Flourish</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Vacation Bible School (VBS) is held each summer under pastoral care with Mrs. Mary Rapp as director. Mission Day Trips are taken to &ldquo;Ranch Hope for Boys,&rdquo; where youth leaders enjoy Bible study, board games, and cards. These formative programs shape multiple generations of young Christians in Atco and surrounding communities.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="waterford membership heggan schleinkofer battelle congdon session atco 1940 1950 1956 1960 snyder hoag kling franke soistmann maccaroni jumm families roll records">
+<div class="event-summary"><span class="ev-year">1940&ndash;1960</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Membership</span><span class="ev-title">Waterford &amp; Atco Membership Rolls &mdash; Mid-Century Families</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Waterford Church roll includes: <strong>Heggan</strong> (Reuben D., Amelia R., Doris E., Paul L., Robert R., Lois May, Jary Horace, Elwood Charles) &middot; <strong>Kling</strong> (Harriet, Mildred, William H., Estella M.) &middot; <strong>Maccaroni</strong> (Jean, Warren Sr. &amp; Jr.) &middot; <strong>Shinn</strong> (Marion Winetta, Betty Albert) &middot; <strong>Soistmann</strong> (Fred S., William Harris) &middot; <strong>Jumm</strong> (Catherine &amp; Michael) &middot; <strong>Hoag</strong> (Myrtle B., Virginia S., Winiford) &middot; <strong>Franke</strong> (Carol Dale, Doris Louisa). Atco roll adds: <strong>Snyder</strong> (Mr. &amp; Mrs. Edward W. Snyder, Certificate of Dismissal from Oliveden Presbyterian, Philadelphia, 8 March 1956, residing at 40 Spruce Street in Marlton Lakes, Atco, NJ). <strong>Congdon</strong> family continues to serve prominently.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="5 february 1979 session meeting rev jack robinson norma holloway cook karen duble schlachter stan banes norman duble zan duble paul hand joyce holton com ieropoli william bill price martha ranck judy tapper carpet sanctuary communion 18 february 1979 58 persons holy communion ruling elders stan banes fritz holton edward snyder george purdy">
+<div class="event-summary"><span class="ev-year">5 Feb 1979</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Session</span><span class="ev-title">Session Meeting 1979 &mdash; Congregation &amp; Leadership</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Session Meeting, Moderator: Rev. Jack L. Robinson. Present: Mrs. Norma (Holloway) Cook &middot; Mrs. Karen (Duble) Schlachter &middot; Mr. Stan Banes &middot; Mr. Norman Duble &middot; Mr. A.A. (Zan) Duble. Absent: Mr. Paul Hand &middot; Mrs. Joyce Holton &middot; Mr. Com Ieropoli &middot; Mr. William (Bill) Price &middot; Mrs. Guy (Martha) Ranck. Mrs. Judy Tapper&rsquo;s offer to purchase new carpet upstairs in the Sanctuary is unanimously accepted. On 18 February 1979, 58 persons partake of Holy Communion. Ruling Elders serving: Mr. Stan Banes &middot; Mr. Fritz Holton &middot; Mr. Edward (Ed) Snyder &middot; Mr. George Purdy.</p></div></div>
+
+</div></div><!-- /era 6 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 7: UNITY & ROBINSON 1963–1983
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="7">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">Unity, Growth &amp; New Ministries</span><span class="dh-years">1963&ndash;1983</span></div>
+  <div class="dh-right"><span class="dh-count">10 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="pastor" data-text="december 1963 stanley mont pastor atco waterford dec 1963 december 31 1968 vacation bible school vbs mrs mary rapp director ranch hope boys senior choir joe zook junior choir mardi duble united presbyterian women association">
+<div class="event-summary"><span class="ev-year">Dec 1963&ndash;Dec 1968</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Stanley J. Mont &mdash; Atco &amp; Waterford United</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Stanley J. Mont serves as pastor of both Atco and Waterford. During his service: Senior Choir Director/Organist: Mr. Joe Zook; Junior Choir Director: Mrs. Mardi Duble; VBS held each summer with Mrs. Mary Rapp as director. 11 March 1964: The Ladies Guild is renamed &ldquo;United Presbyterian Women&rsquo;s Association.&rdquo; The organization later disbands in the 1980s after decades of faithful service.</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1964 atco waterford churches officially united one congregation presbytery west jersey stanley mont sunday morning worship service sessions related affairs combined one body">
+<div class="event-summary"><span class="ev-year">1964</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Historic</span><span class="ev-title">Atco &amp; Waterford Churches Officially United as ONE Congregation</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Under the direction of the Presbytery of West Jersey, moderated by Rev. Stanley J. Mont, the Atco and Waterford congregations, sessions, and all related affairs are officially united as ONE during a Sunday Morning Worship Service. Nearly a century of shared ministry through circuit preaching &mdash; Atco, Waterford, and Berlin serving together since 1867 &mdash; is formally consummated into a single united congregation. Respectfully submitted by Rev. Stanley J. Mont (March 2017).</p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1967 original waterford church building sold money deposited atco general fund first presbyterian waterford sold 1967">
+<div class="event-summary"><span class="ev-year">1967</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Organization</span><span class="ev-title">Waterford Church Building Sold</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The original &ldquo;First Presbyterian Church of Waterford&rdquo; building is sold. Proceeds deposited into the Atco Church General Fund. The two congregations, now united for three years, fully consolidate at the Atco Avenue &amp; Second Street location.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="october 1969 jack robinson pastor second longest serving praise dancers mariners young adults contemporary music gaither family hymns july 1980 jo wife active outreach indigent homes">
+<div class="event-summary"><span class="ev-year">Oct 1969&ndash;Jul 1980</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Jack L. Robinson &mdash; Second Longest-Serving Pastor</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Jack Robinson and his wife Jo lead the church for over a decade &mdash; the second longest pastorate in church history. Under his leadership: <strong>Praise Dancers</strong> ministry is launched &middot; The <strong>Mariners</strong>, a very active young adult group, is established &middot; The church begins working more with local indigent homes &middot; Contemporary music is introduced using a Gaither Family Songbook &middot; A new hymnal, &ldquo;Hymns for the Family of God,&rdquo; is purchased for the congregation.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1977 1980s junior choir handbells bell choir fund morning has broken bluebirds cindy sorge atco christ chimes 1992 patrick riley hammonton 12th bell karen duble schlachter gail passarella donation bells set purchased">
+<div class="event-summary"><span class="ev-year">1977&ndash;1992</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Handbell Ministry Launched &mdash; The &ldquo;12th Bell Choir Fund&rdquo;</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The &ldquo;12th Bell Choir Fund&rdquo; is suggested and completed by Mrs. Karen (Duble) Schlachter and Ms. Gail Passarella. Church membership donates each and every bell until the Basic Set is purchased. Through the 1980s and 1990s, individual donations complete the full bell set.</p><p>First public handbell performance during Sunday Morning Worship Service: The Bluebirds (1980s, exact date unknown), performing &ldquo;Morning Has Broken,&rdquo; directed by Gail Passarella. The Senior Bell Choir later plays at the opening and during special music under Mrs. Cindy Sorge. In 1992, the ministry is renamed <strong>&ldquo;Atco Christ Chimes.&rdquo;</strong></p></div></div>
+
+<div class="event-row" data-cat="org" data-text="1981 church statistics annual treasurer report receipts disbursements caroline pennock ruling elders edward cline norma cook david dowell edward snyder class 1984 deacons zan duble judi bartilucci henry weiss ethel brogden esther ehrke donna brimfield elinor mcferran joyce holton george purdy sunday school 51 students kathy holton banes presbyterian women bluebirds josephine pelikoski">
+<div class="event-summary"><span class="ev-year">1981</span><span class="ev-tag" style="background:var(--tag-org);color:var(--tag-org-t)">Leadership</span><span class="ev-title">1981 Church Statistics &mdash; Full Leadership Roster</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>Treasurer:</strong> Mrs. William (Caroline) Pennock. <strong>Ruling Elders (Class of 1984):</strong> Mr. Edward Cline &middot; Mrs. Donald (Norma) Cook &middot; Mr. David Dowell &middot; Mr. Edward Snyder. <strong>Deacons (Class of 1984):</strong> Mr. Alexander (Zan) Duble &middot; Mrs. Judi Bartilucci &middot; Mr. Henry Weiss &middot; Mrs. Ethel Brogden &middot; Mrs. Esther Ehrke. <strong>Deacons (1-year term):</strong> Mrs. George (Donna) Brimfield &middot; Mrs. Elinor McFerran &middot; Mrs. Frederick (Joyce) Holton. <strong>Board of Deacon Treasurer:</strong> Mr. George Purdy. <strong>Sunday School:</strong> 1 Officer, 11 Teachers, 51 Students, 5 Cradle Roll. <strong>Benevolence Treasurer:</strong> Mr. John (Ella) Congdon. <strong>Bluebirds Treasurer:</strong> Mrs. Josephine Pelikoski. <strong>Presbyterian Women Treasurer:</strong> Mrs. Stanley (Kathy Holton) Banes.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="10 may 1981 15 august 1983 rev gary pemberton pastor interim edward napier september 1983 september 1984">
+<div class="event-summary"><span class="ev-year">1981&ndash;1984</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Gary Pemberton, then Rev. Edward Napier (Interim)</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Rev. Gary Pemberton serves 10 May 1981&ndash;15 August 1983. Rev. Edward Napier serves as Interim Pastor September 1983&ndash;September 1984. During 1983, ceiling fans are installed in the sanctuary in loving memory of Mrs. Emma Fuhrer, and the church tower is refurbished.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="1857 oil picture mary lowndes 1857 1929 stained glass art gail passarella del monte church found notable portrait child historic artifact">
+<div class="event-summary"><span class="ev-year">Historical</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Art &amp; Heritage</span><span class="ev-title">Oil Portrait of Mary Lowndes Found in the Church</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>An oil picture of Mary Lowndes (1857&ndash;1929) is discovered in the church by Mrs. Gail (Passarella) Del Monte. Ms. Lowndes is most notable for Stained Glass Art. Visitors identify her face in the portrait of a young child.</p></div></div>
+
+<div class="event-row" data-cat="music" data-text="1984 1992 choir director david dave dowell atco 1992 2008 handbells choir director cindy sorge 2008 donald harbert 2010 nancy gibbons 2013 jocelyn moore 2015 2024 patrick riley full music ministry timeline chronology">
+<div class="event-summary"><span class="ev-year">1984&ndash;Present</span><span class="ev-tag" style="background:var(--tag-mus);color:var(--tag-mus-t)">Music</span><span class="ev-title">Complete Choir Director Succession: Dowell &rarr; Sorge &rarr; Harbert &rarr; Gibbons &rarr; Moore &rarr; Riley</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>1984&ndash;1992:</strong> Choir Director Mr. David (Dave) Dowell of Atco, NJ.<br><strong>1992&ndash;2008:</strong> HandBells/Choir Director Mrs. Cindy Sorge; founded &ldquo;Atco Christ Chimes&rdquo; 1992.<br><strong>2008&ndash;2009:</strong> Choir Director Mr. Donald Harbert of Atco, NJ.<br><strong>2008&ndash;Present:</strong> Handbells Director Mr. Patrick Riley of Hammonton, NJ &mdash; Atco Christ Chimes.<br><strong>2010&ndash;2013:</strong> Choir Director Mrs. Nancy Gibbons.<br><strong>2012&ndash;Present:</strong> Organist Mr. Patrick Riley of Hammonton, NJ.<br><strong>2013&ndash;2015:</strong> Choir Director Mrs. Jocelyn Moore.<br><strong>2013&ndash;May 2024:</strong> Special Music &mdash; Mr. Eugene Henry (5 Feb 1932&ndash;24 May 2024) &amp; Mrs. Frances (Hayes-Maier) Ewan (6 Sep 1934&ndash;4 Jul 2024).<br><strong>2015&ndash;27 Oct 2024:</strong> Choir Director Mr. Patrick Riley.<br><strong>Fall 1981&ndash;June 2012:</strong> Organist Mrs. James (Jean) Shockley of Atco, NJ.<br><strong>Jul 2024:</strong> Sub: Freedom + Mr. David (Dave) Dowell.<br><strong>2 Nov 2024 (1 week only):</strong> Sub Pianist/Choir Director Michael Crews.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="1922 2026 bluebirds women ministry cards encouragement flowers applesauce bread shut ins last thursday monthly 1 30 pm september spring generations spreading joy lord founded 1922 still active 2026 century service">
+<div class="event-summary"><span class="ev-year">1922&ndash;Present</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Bluebirds &mdash; A Century of Spreading Joy (Still Active 2026)</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Founded February 1922, the Bluebirds have served for over a century. Their mission: &ldquo;Spreading joy in the name of the Lord.&rdquo; By sending cards, messages of encouragement, flowers, homemade applesauce or bread, they create a Christian connection with shut-ins and those in need. They meet the last Thursday of each month at 1:30 PM (September through Spring). All women of the church are invited. <em>Still faithfully serving in 2026.</em></p></div></div>
+
+</div></div><!-- /era 7 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 8: BEGGS ERA 1984–2023
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="8">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">The Beggs Era &mdash; 39 Years of Faithful Ministry</span><span class="dh-years">1984&ndash;2023</span></div>
+  <div class="dh-right"><span class="dh-count">15 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="pastor" data-text="30 september 1984 rev dr joseph beggs ordained installed pastor 3pm 39 years longest serving koinonia bible study contemporary traditional worship second sunday morning 8 15 11 am combined 9 30 2022 faith fund don harbert building improvements food bus ministry">
+<div class="event-summary"><span class="ev-year">30 Sep 1984</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Dr. Joseph E. Beggs Ordained &mdash; Longest-Serving Pastor (1984&ndash;2023)</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>At 3:00 PM on 30 September 1984, Rev. Dr. Joseph E. Beggs is ordained and installed as pastor of the Atco United Presbyterian Church. His nearly four-decade ministry transforms the congregation:</p><p><strong>Spiritual programs:</strong> Koinonia (small home group Bible Studies) &middot; Thursday morning Bible Study in Fellowship Hall &middot; Monthly coffee house &middot; Second Sunday morning contemporary service at 8:15 AM and traditional service at 11:00 AM added &middot; September 2022: Combined 9:30 AM service.</p><p><strong>Physical improvements:</strong> Nancy Fitzpatrick Bus purchased, Food Bus Ministry organized by Sara Troendle (now under Nancy Fallon &amp; Deacons) &middot; Fellowship Hall basement remodeled (asbestos removed, old wooden floor replaced) &middot; New organ purchased for sanctuary &middot; Sanctuary painted and re-carpeted &middot; Land purchased from former Richards Estate behind/next to the Manse (Church Office) &middot; Air-conditioning installed &middot; Accessibility lift added &middot; New accessible entrance and restrooms &mdash; all through the Faith Fund overseen by Don Harbert.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="july 1990 pip page perseverance in prayer doris chuck gordon sunday morning bulletin original format present weekly prayer list congregation faithful">
+<div class="event-summary"><span class="ev-year">Jul 1990</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Faith Life</span><span class="ev-title">&ldquo;Perseverance in Prayer&rdquo; (PIP) Page Introduced by Mrs. Doris Gordon</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The original &ldquo;Perseverance In Prayer Page&rdquo; (PIP Page) is introduced by Mrs. Chuck (Doris) Gordon and included in every Sunday morning bulletin. The original format remains in use today &mdash; a lasting symbol of the congregation&rsquo;s commitment to intercessory prayer for one another.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="koinonia ministry small home group bible studies fellowship prayer bible study mission greek word for fellowship strong growing thursday morning bible study fellowship hall atco surrounding areas">
+<div class="event-summary"><span class="ev-year">1984&ndash;Present</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Faith Life</span><span class="ev-title">Koinonia Ministry &mdash; Small Group Bible Studies Flourish</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Under Rev. Dr. Beggs, the Koinonia Ministry (Greek for &ldquo;Fellowship&rdquo;) launches and grows stronger over the decades. Small group Bible Studies meet in different homes throughout Atco and surrounding areas. Each group focuses on four areas: fellowship, prayer, Bible study, and mission/ministry. The Thursday morning Bible Study in Fellowship Hall &mdash; &ldquo;Never too old to learn, even today&rdquo; &mdash; also continues.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="food bus ministry nancy fitzpatrick bus groceries smiles prayer greater calvary baptist west atco sara troendle nancy fallon deacons outreach community love">
+<div class="event-summary"><span class="ev-year">1990s&ndash;Present</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Outreach</span><span class="ev-title">Food Bus Ministry &mdash; Free Groceries &amp; Prayer to Those in Need</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Nancy Fitzpatrick Bus is purchased and the Food Bus Ministry organized by Sara Troendle, now under direction of Nancy Fallon and the Deacons. Monthly ministry to Greater Calvary Baptist Church in West Atco, NJ: free bags of groceries, a smile, and a time of prayer. Still active in 2026 &mdash; next scheduled: Greater Calvary Baptist Church, West Atco, NJ.</p></div></div>
+
+<div class="event-row" data-cat="faith" data-text="30 april 2017 150th anniversary celebrated worship service church supper fellowship hall 10am milestone atco united presbyterian">
+<div class="event-summary"><span class="ev-year">30 Apr 2017</span><span class="ev-tag" style="background:var(--tag-fth);color:var(--tag-fth-t)">Anniversary</span><span class="ev-title">150th Anniversary Celebrated</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The 150th Anniversary of the United Presbyterian Church of Atco is celebrated with a 10 AM Worship Service followed by a Church Supper in Fellowship Hall &mdash; a joyful milestone marking a century and a half of faithful witness in the Atco community.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="february 2020 kids4christ launch ages 5 grade 5 third friday month vacation bible school style two hours faith learning 2021 tots4christ ages 0 4 second friday september june bible study singing praises snack play time fellowship hall">
+<div class="event-summary"><span class="ev-year">2020&ndash;2021</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Youth</span><span class="ev-title">Kids4Christ &amp; Tots4Christ Programs Launched</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>February 2020: Kids4Christ</strong> launches for ages 4&ndash;14 on the third Friday of each month &mdash; a two-hour faith-based program modeled after VBS: eat, play, sing, laugh, and share in the joy of Jesus Christ. <strong>2021: Tots4Christ</strong> begins for parents and children ages 0&ndash;4 on the second Friday of each month (September&ndash;June, paused summers): Bible Study, singing praises, snack, and playtime in Fellowship Hall.</p></div></div>
+
+<div class="event-row" data-cat="community" data-text="july 2022 vacation bible school VBS final mega sports camp christ redeemer roman catholic church community christians atco gail passarella del monte 50 years pastor beggs 37 years final season ending">
+<div class="event-summary"><span class="ev-year">Jul 2022</span><span class="ev-tag" style="background:var(--tag-com);color:var(--tag-com-t)">Community</span><span class="ev-title">Final Vacation Bible School &mdash; Held at Christ The Redeemer</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>VBS is held in July 2022 at Christ The Redeemer Roman Catholic Church with &ldquo;Community Christians Churches of Atco.&rdquo; Theme: &ldquo;Mega Sports Camp.&rdquo; Under Pastor Beggs (37 years of service) and Gail (Passarella) Del Monte (after 50 years), this proves to be the final season of the church&rsquo;s VBS program.</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="september 2022 combined sunday morning 9 30 am contemporary traditional worship service single unified blended contemporary traditional together">
+<div class="event-summary"><span class="ev-year">Sep 2022</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Today</span><span class="ev-title">Two Services Combined &mdash; Single 9:30 AM Worship</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>In September 2022, the 8:15 AM Contemporary and 11:00 AM Traditional Sunday morning services are combined into a single blended <strong>9:30 AM Contemporary &amp; Traditional Worship Service</strong> &mdash; welcoming all members together in one unified celebration of faith.</p></div></div>
+
+<div class="event-row" data-cat="pastor" data-text="july 23 2023 pastor joseph e beggs retirement dinner 125 people luncheon fellowship hall shoprite west berlin catered platters celebration 39 years beloved longest serving pastor">
+<div class="event-summary"><span class="ev-year">23 Jul 2023</span><span class="ev-tag" style="background:var(--tag-past);color:var(--tag-past-t)">Pastor</span><span class="ev-title">Rev. Dr. Joseph E. Beggs Retires After 39 Years</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>On Sunday, July 23, 2023, the congregation celebrates Pastor Joe&rsquo;s Retirement Party with a luncheon in Fellowship Hall for 125 people. Catered platters from ShopRite of West Berlin: Roast Beef with Gravy, Meatballs &amp; tomato sauce, Chicken Fingers, Finger Sandwich trays, a Wrap Platter, and a beautiful sheet cake. Members provide side dishes, desserts, and beverages. The room is decorated with a festive Retirement theme.</p>
+<div class="eq">&ldquo;Praise The Lord in Everything. The Church continues to seek to honor Christ and serve the community through the efforts of her dedicated and faithful members.&rdquo; &mdash; Gail (Passarella) Del Monte</div></div></div>
+
+</div></div><!-- /era 8 -->
+
+<!-- ════════════════════════════════════════════════
+     ERA 9: THE CHURCH TODAY 2023–PRESENT
+════════════════════════════════════════════════ -->
+<div class="decade" data-era="9">
+<button class="decade-hdr" aria-expanded="false">
+  <div class="dh-left"><span class="dh-era">The Church Today &mdash; Continuing Faithfully</span><span class="dh-years">2023&ndash;Present</span></div>
+  <div class="dh-right"><span class="dh-count">6 events</span><svg class="dh-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</button>
+<div class="decade-body">
+
+<div class="event-row" data-cat="now" data-text="current 2025 2026 sunday worship 9 30 am sunday school 8 30 am children church downstairs weekly programs monthly food bus kids4christ tots4christ bluebirds greet pray chancel choir koinonia">
+<div class="event-summary"><span class="ev-year">2024&ndash;2026</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Today</span><span class="ev-title">Weekly &amp; Monthly Programs Currently Active</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>Weekly:</strong> Sunday Worship 9:30 AM &middot; Sunday School 8:30 AM &middot; Children&rsquo;s Church (Sundays during service, downstairs) &middot; Chancel Choir Rehearsal (Sep&ndash;Memorial Day): Thursdays 7:30 PM &middot; Greet &amp; Pray (Zoom): Thursdays 7:00 PM &middot; Koinonia small groups in various homes.</p><p><strong>Monthly:</strong> Kids4Christ (3rd Friday, ages 4&ndash;14) &middot; Tots4Christ (2nd Friday, ages 0&ndash;4, Sep&ndash;Jun) &middot; Bluebirds (last Thursday, 1:30 PM, Sep&ndash;Spring) &middot; Food Bus Ministry &middot; Lunch Bunch.</p><p><strong>Annually:</strong> Youth Group biweekly (Grades 7&ndash;12): MWA Retreat, 30 Hour Famine, Youth Sunday, Youth Breakfast, mini golf &middot; Angel Tree (Christmas) &middot; Thanksgiving Baskets &middot; Ecumenical Thanksgiving Service &middot; Drama Kids.</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="outreach seeds of hope camden cws blankets church world service angel tree salvation army thanksgiving baskets choices heart presbyterian disaster assistance atco united presbyterian current active 2025 2026">
+<div class="event-summary"><span class="ev-year">Present</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Outreach</span><span class="ev-title">Current Outreach &amp; Mission Partnerships (2025&ndash;2026)</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>Active as of 2025&ndash;2026: <strong>Food Bus Ministry</strong> (monthly, Greater Calvary Baptist, West Atco) &middot; <strong>Church World Service Blankets</strong> &middot; <strong>Choices of the Heart</strong> (pregnancy support, 25th Anniversary Baby Bottle Campaign) &middot; <strong>Salvation Army Angel Tree</strong> (Christmas gifts for children &amp; seniors) &middot; <strong>Thanksgiving Baskets</strong> (community Thanksgiving meals) &middot; <strong>Seeds of Hope</strong> (Camden, NJ: ministry to inmates, ex-offenders, homeless, those in addiction &amp; prostitution) &middot; <strong>Presbyterian Disaster Assistance</strong> (PC USA emergency &amp; refugee program).</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="youtube channel facebook instagram atco united presbyterian church online worship services media broadcast social media digital ministry 400 followers 1814 were here broadcast worship">
+<div class="event-summary"><span class="ev-year">Present</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Digital</span><span class="ev-title">Online Ministry &mdash; YouTube, Facebook &amp; Instagram</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>YouTube:</strong> <a href="https://www.youtube.com/channel/UCdYEYf271ccOOAueTB2uIUA" target="_blank">youtube.com/channel/UCdYEYf271ccOOAueTB2uIUA</a> &mdash; worship services &amp; events. <strong>Facebook:</strong> <a href="https://www.facebook.com/AtcoPres" target="_blank">facebook.com/AtcoPres</a> &mdash; 400+ followers, 1,814+ check-ins. <strong>Instagram:</strong> <a href="https://www.instagram.com/atcopresbyterianchurch/" target="_blank">@atcopresbyterianchurch</a>. Online giving available at atcopres.org.</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="TOWER mission statement teach others witness equip saints rejoice church government session ruling elders deacons trustees book of order presbyterian usa west jersey presbytery online giving denomination">
+<div class="event-summary"><span class="ev-year">Present</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Governance</span><span class="ev-title">Mission, Governance &amp; Denominational Identity</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p><strong>Mission (TOWER):</strong> Teach &middot; Others &middot; Witness &middot; Equip the Saints &middot; Rejoice.</p><p><strong>Church Government:</strong> Session (Ruling Elders &mdash; spiritual leadership per Book of Order) &middot; Board of Deacons (compassion, witness, service) &middot; Board of Trustees (property &amp; finances).</p><p><strong>Denomination:</strong> Presbyterian Church (U.S.A.), Presbytery of West Jersey. New Members Classes available on a periodic basis. Online giving available through the church website.</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="4 chaplains dorchester february 2026 2025 spring prayer children church spring has sprung worship fellowship sunday 9 30 am community current present life atco new jersey">
+<div class="event-summary"><span class="ev-year">2025&ndash;2026</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Today</span><span class="ev-title">The Church in 2025&ndash;2026 &mdash; Continuing the Mission</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The Atco United Presbyterian Church at 2259 Atco Ave continues its vibrant ministry in 2025&ndash;2026. Sunday Worship: 9:30 AM. Children&rsquo;s Church downstairs during service. Special commemorations include the 4 Chaplains of the Dorchester (February). The website announces: &ldquo;Spring has Sprung! Need a Prayer, send a Prayer. Join us for Prayer, Worship and Fellowship every Sunday at 9:30 AM. Children Church will be held during Sunday Service downstairs. &lsquo;I can do all things through Christ who gives me strength.&rsquo; Phil. 4:13.&rdquo;</p></div></div>
+
+<div class="event-row" data-cat="now" data-text="wayback machine archive history website atcopres.org ionos mywebsite platform church website history development modern online presence google maps directions">
+<div class="event-summary"><span class="ev-year">Note</span><span class="ev-tag" style="background:var(--tag-now);color:var(--tag-now-t)">Digital Heritage</span><span class="ev-title">About the Church&rsquo;s Web Presence</span><svg class="ev-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="event-detail"><p>The church&rsquo;s website at <a href="https://www.atcopres.org" target="_blank">atcopres.org</a> is hosted on the IONOS MyWebsite platform. It includes pages for: Home &middot; Mission Statement &middot; Worship Services &middot; Get Involved &middot; Youth &middot; Koinonia (Bible Study Groups) &middot; Media &middot; Outreach &amp; Missions &middot; Contact Us. The site lists office hours: Tue&ndash;Fri 9 AM&ndash;3 PM and Sunday 8 AM&ndash;1 PM. Online giving is available through the eservicepayments.com portal. The church is also listed on Facebook (AtcoPres), Instagram (@atcopresbyterianchurch), and YouTube. Multiple directory listings confirm the address: 2259 Atco Ave (or 449 2nd St), Atco, NJ 08004, Camden County.</p></div></div>
+
+</div></div><!-- /era 9 -->
+
+</div><!-- /timeline-wrap -->
+
+<!-- PASTORS -->
+<section id="pastors" class="pastors-section">
+  <h2 class="sec-head" style="color:#fff">Pastors Who Have Served<em>1851 &ndash; Present &middot; 44 documented ministers</em></h2>
+  <div class="p-inner">
+    <div class="pc"><div class="pn">Rev. Charles Ford</div><div class="py">1851&ndash;c.1861</div><div class="pp">Occasional visiting pastor, Williamstown &rarr; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. Allen H. Brown</div><div class="py">1851&ndash;1866 / 1881&ndash;86</div><div class="pp">Domestic/Synodical Missionary; multiple terms</div></div>
+    <div class="pc"><div class="pn">Rev. John B. Edmondson</div><div class="py">1864</div><div class="pp">Occasional visiting pastor, Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. F.R. Brace, D.D.</div><div class="py">1866 / 1881&ndash;1887</div><div class="pp">Moderator for Atco &amp; Waterford; Blackwood Church</div></div>
+    <div class="pc"><div class="pn">Rev. Samuel Loomis</div><div class="py">Nov 1867&ndash;Sep 1868</div><div class="pp">First official Pastor of Atco</div></div>
+    <div class="pc"><div class="pn">Rev. E.D. Newberry</div><div class="py">1868&ndash;1873</div><div class="pp">Dedicated first church edifice, March 1869</div></div>
+    <div class="pc"><div class="pn">Rev. George Warrington</div><div class="py">1872&ndash;1873</div><div class="pp">Ministerial Supply</div></div>
+    <div class="pc"><div class="pn">Rev. James G. Shinn</div><div class="py">1873&ndash;1877 / 1878</div><div class="pp">Atco, Berlin &amp; Waterford; installed Waterford 1878</div></div>
+    <div class="pc"><div class="pn">Rev. A.O. Vaughan</div><div class="py">1878&ndash;Apr 1879</div><div class="pp">Resigned 4 May 1879</div></div>
+    <div class="pc"><div class="pn">Rev. L.C. Baker</div><div class="py">1881&ndash;1882</div><div class="pp">Ministerial Supply</div></div>
+    <div class="pc"><div class="pn">Rev. Frederick E. Kavanaugh</div><div class="py">1881&ndash;1886</div><div class="pp">Ministerial Supply; Princeton Seminary student</div></div>
+    <div class="pc"><div class="pn">Rev. H.W. Brown</div><div class="py">1881&ndash;1886</div><div class="pp">Ministerial Supply</div></div>
+    <div class="pc"><div class="pn">Rev. T.H. Mead</div><div class="py">1885&ndash;1887</div><div class="pp">Pastor for Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. J.B. Adams</div><div class="py">1887&ndash;Feb 1889</div><div class="pp">Pastor for Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. D.I. Camp</div><div class="py">1890&ndash;1891</div><div class="pp">Organized Young People&rsquo;s C.E. Society, 1891</div></div>
+    <div class="pc"><div class="pn">Rev. Samuel Sample</div><div class="py">1890&ndash;1895</div><div class="pp">Temporary supply; Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. H.L. Janeway</div><div class="py">1889&ndash;1892</div><div class="pp">Atco, Berlin &amp; Waterford; Williamstown</div></div>
+    <div class="pc"><div class="pn">Rev. Howard M. Wright</div><div class="py">1891&ndash;1892</div><div class="pp">Pastor for Atco, Berlin &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. Robert B. Stevens</div><div class="py">1891&ndash;1892 / 1895&ndash;1901</div><div class="pp">Pastor for Atco, Berlin &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. T.H. Midd</div><div class="py">1895&ndash;1897</div><div class="pp">Pastor for Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. Allen A. Brown</div><div class="py">1897&ndash;1903</div><div class="pp">Ministerial Supply</div></div>
+    <div class="pc"><div class="pn">Rev. Josiah T. Stevenson</div><div class="py">1898&ndash;24 Mar 1903</div><div class="pp">Numbered envelope system; weekly prayer meetings</div></div>
+    <div class="pc"><div class="pn">Rev. George Smith</div><div class="py">1903&ndash;1904</div><div class="pp"></div></div>
+    <div class="pc"><div class="pn">Rev. William L. Squier</div><div class="py">15 May 1904&ndash;1911</div><div class="pp">39th Anniversary Historical Address (1906)</div></div>
+    <div class="pc"><div class="pn">Rev. A.P. Botsford</div><div class="py">1909&ndash;1910</div><div class="pp">Ministerial Supply, Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. Franz Zeller</div><div class="py">1911&ndash;1912</div><div class="pp">Ministerial Supply</div></div>
+    <div class="pc"><div class="pn">Rev. Dr. Francis J. Collier</div><div class="py">1913&ndash;1915</div><div class="pp">Wrote tribute to James MacDougall</div></div>
+    <div class="pc"><div class="pn">Rev. Charles D. Cook</div><div class="py">1915&ndash;1916</div><div class="pp">Proposed plans for new edifice</div></div>
+    <div class="pc"><div class="pn">Rev. Charles G. Mudge</div><div class="py">1919&ndash;1923</div><div class="pp">Served Atco &amp; Waterford</div></div>
+    <div class="pc"><div class="pn">Rev. R.E. Muthard</div><div class="py">1918&ndash;1923</div><div class="pp">Installed at New Church dedication, July 1922</div></div>
+    <div class="pc"><div class="pn">Rev. Dennis McAllister</div><div class="py">1919&ndash;1923</div><div class="pp">Pastor of Berlin Presbyterian Church</div></div>
+    <div class="pc"><div class="pn">Rev. William McNally</div><div class="py">1923&ndash;1926</div><div class="pp"></div></div>
+    <div class="pc"><div class="pn">Rev. Thomas Kerr</div><div class="py">1926&ndash;1927</div><div class="pp"></div></div>
+    <div class="pc"><div class="pn">Rev. Joseph Harrison</div><div class="py">1927&ndash;1929</div><div class="pp">First to occupy the new Manse (1927)</div></div>
+    <div class="pc"><div class="pn">Rev. Caleb L. Pancoast</div><div class="py">1929&ndash;1936</div><div class="pp">Steady leadership through the Great Depression</div></div>
+    <div class="pc"><div class="pn">Rev. John C. Castle, Jr.</div><div class="py">1937&ndash;1940</div><div class="pp"></div></div>
+    <div class="pc"><div class="pn">Rev. Charles L. Cureton</div><div class="py">1939&ndash;1945</div><div class="pp">Pastor for Waterford Church</div></div>
+    <div class="pc"><div class="pn">Rev. W. Gordon Hannaway</div><div class="py">20 Sep 1940&ndash;1 Oct 1963</div><div class="pp">23 years; 100 Man Sundays; mortgage burned 1942</div></div>
+    <div class="pc"><div class="pn">Rev. Stanley J. Mont</div><div class="py">Dec 1963&ndash;31 Dec 1968</div><div class="pp">United Atco &amp; Waterford as ONE congregation (1964)</div></div>
+    <div class="pc"><div class="pn">Rev. Jack L. Robinson</div><div class="py">Oct 1969&ndash;Jul 1980</div><div class="pp">2nd longest-serving; Praise Dancers; Mariners</div></div>
+    <div class="pc"><div class="pn">Rev. Gary Pemberton</div><div class="py">10 May 1981&ndash;15 Aug 1983</div><div class="pp"></div></div>
+    <div class="pc"><div class="pn">Rev. Edward Napier</div><div class="py">Sep 1983&ndash;Sep 1984</div><div class="pp">Interim Pastor</div></div>
+    <div class="pc"><div class="pn">Rev. Dr. Joseph E. Beggs</div><div class="py">30 Sep 1984&ndash;Jul 2023</div><div class="pp">Longest-serving: 39 years of faithful ministry</div></div>
+  </div>
+</section>
+
+<!-- MUSIC HERITAGE -->
+<section id="music" class="music-section">
+  <h2 class="sec-head">Music Ministry Heritage<em>A legacy of praise since 1869</em></h2>
+  <ul class="music-list">
+    <li><span class="ml-year">1869&ndash;1904</span><span class="ml-role">Piano/Choir</span><span class="ml-name">Mrs. Adam (Maude) Sloan &mdash; first musician; recorded as Organist 12 Jan 1904</span></li>
+    <li><span class="ml-year">1899&ndash;1940</span><span class="ml-role">Organist/Choir</span><span class="ml-name">Mrs. Theodore (Dessima) Schleinkofer; asst. Miss Carrie Hand (thru 1940)</span></li>
+    <li><span class="ml-year">??&ndash;1947</span><span class="ml-role">Organist</span><span class="ml-name">Mrs. Elizabeth Mossop of Atco, NJ</span></li>
+    <li><span class="ml-year">1946&ndash;1951</span><span class="ml-role">Choir/Organ</span><span class="ml-name">Mr. Davis Long &mdash; Westminster Choir School; Choir Dir. from 1946, Organist from 1947</span></li>
+    <li><span class="ml-year">1950s&ndash;1977</span><span class="ml-role">Jr. Choir Dir.</span><span class="ml-name">Mrs. Alexander (Mardi) Duble of Atco, NJ (also sub-Organist, fall 1958)</span></li>
+    <li><span class="ml-year">1951&ndash;1954</span><span class="ml-role">Organist</span><span class="ml-name">Mr. Eugene Ewan of Atco, NJ &mdash; drafted in 1954; played Easter 6 AM carillon</span></li>
+    <li><span class="ml-year">1954&ndash;1981</span><span class="ml-role">Organist</span><span class="ml-name">Mr. Joe Zook of Atco, NJ &mdash; first Allen Organ player; passed suddenly 1981</span></li>
+    <li><span class="ml-year">1954&ndash;1974</span><span class="ml-role">Organist</span><span class="ml-name">Mrs. Lawrence (Irene Schleinkofer) McFerran of Atco, NJ (b.1926, d.1976)</span></li>
+    <li><span class="ml-year">1958 (few months)</span><span class="ml-role">Sub-Organist</span><span class="ml-name">Mrs. Alexander (Mardi) Duble &amp; Mrs. Harriett DeLanzo</span></li>
+    <li><span class="ml-year">1977&ndash;Present</span><span class="ml-role">Jr. Choir Dir.</span><span class="ml-name">Gail (Passarella) Del Monte &mdash; 50+ years; also Handbell director initially</span></li>
+    <li><span class="ml-year">Fall 1981&ndash;Jun 2012</span><span class="ml-role">Organist</span><span class="ml-name">Mrs. James (Jean) Shockley of Atco, NJ</span></li>
+    <li><span class="ml-year">1984&ndash;1992</span><span class="ml-role">Choir Dir.</span><span class="ml-name">Mr. David (Dave) Dowell of Atco, NJ</span></li>
+    <li><span class="ml-year">1992&ndash;2008</span><span class="ml-role">Handbells/Choir</span><span class="ml-name">Mrs. Cindy Sorge &mdash; founded &ldquo;Atco Christ Chimes&rdquo; 1992</span></li>
+    <li><span class="ml-year">2008&ndash;2009</span><span class="ml-role">Choir Dir.</span><span class="ml-name">Mr. Donald Harbert of Atco, NJ</span></li>
+    <li><span class="ml-year">2008&ndash;Present</span><span class="ml-role">Handbells Dir.</span><span class="ml-name">Mr. Patrick Riley of Hammonton, NJ &mdash; Atco Christ Chimes</span></li>
+    <li><span class="ml-year">2010&ndash;2013</span><span class="ml-role">Choir Dir.</span><span class="ml-name">Mrs. Nancy Gibbons</span></li>
+    <li><span class="ml-year">2012&ndash;Present</span><span class="ml-role">Organist</span><span class="ml-name">Mr. Patrick Riley of Hammonton, NJ</span></li>
+    <li><span class="ml-year">2013&ndash;2015</span><span class="ml-role">Choir Dir.</span><span class="ml-name">Mrs. Jocelyn Moore</span></li>
+    <li><span class="ml-year">2013&ndash;May 2024</span><span class="ml-role">Special Music</span><span class="ml-name">Mr. Eugene Henry (1932&ndash;2024) &amp; Mrs. Frances (Hayes-Maier) Ewan (1934&ndash;2024)</span></li>
+    <li><span class="ml-year">2015&ndash;Oct 2024</span><span class="ml-role">Choir Dir.</span><span class="ml-name">Mr. Patrick Riley of Hammonton, NJ (final service 27 Oct 2024)</span></li>
+  </ul>
+</section>
+
+<!-- PEOPLE & FAMILIES -->
+<section id="people" class="people-section">
+  <div style="max-width:980px;margin:0 auto">
+    <h2 class="sec-head">People &amp; Families Index<em>Names documented across the historical records &mdash; searchable</em></h2>
+    <div class="psearch-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input type="search" id="psearch" placeholder="Search a family or person name&hellip;"/>
+    </div>
+    <div class="people-grid" id="people-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Atco United Presbyterian Church</strong></p>
+  <p>2259 Atco Ave &middot; Atco, NJ 08004 &middot; <a href="tel:8567675602">(856) 767-5602</a> &middot; <a href="mailto:atcopres@aol.com">atcopres@aol.com</a></p>
+  <p><a href="https://www.atcopres.org" target="_blank">atcopres.org</a> &middot; Sunday Worship 9:30 AM</p>
+  <p style="margin-top:.75rem">History compiled by Church Historian <strong>Mrs. Gail (Passarella) Del Monte</strong> from original Session Minutes 1867&ndash;1928, Board of Trustee records, Ladies Guild minutes, Sunday School ledgers, and congregational memory. Website compiled 2024&ndash;2025.</p>
+  <p style="margin-top:.4rem;opacity:.4">&ldquo;Praise the Lord for He is good. His love endures forever.&rdquo; &mdash; Psalm 107:1</p>
+</footer>
+
+<script>
+/* ─────────────── PEOPLE DATA ─────────────── */
+const PEOPLE=[
+  {n:"Adams / Alva Adams",d:"Y.P.S.C.E. member (1890s); Rev. J.B. Adams — pastor (1887–1889)"},
+  {n:"Allan / Allen",d:"Robert S. Allan & wife; Miss Isabella Hamilton Allan"},
+  {n:"Alton",d:"Ruling Elder James E. Alton (1867–1882) & wife Mrs. L.L. Alton; Miss Carrie Maria Alton"},
+  {n:"Armstrong",d:"Mrs. Maria B. Armstrong (Waterford, 1894)"},
+  {n:"Badgley",d:"Amanda Badgley (Waterford, 1875); Wanda Badgley"},
+  {n:"Banes",d:"Stan & Kathy (Holton) Banes — Ruling Elder & Presbyterian Women Treasurer (1981)"},
+  {n:"Bartilucci",d:"Mrs. Judi Bartilucci — Deacon (Class of 1984)"},
+  {n:"Barnard",d:"George & Carolina Barnard (Waterford); Caroline R. Barnard — charter Waterford (1866)"},
+  {n:"Bates",d:"Lyda/Lydie Bates; Martha & David Bates (Waterford); Martha Davis Bates & David Wesley Bates (baptisms 1877)"},
+  {n:"Battelle",d:"Everett & Julia R. Battelle — founding Waterford Ruling Elder (ordained 1869); children Ernest, Oscar (baptized 1884), Louis, Eleanor, Louisaee; O.S. Battelle (Clerk); Margaret (Battelle) Henkle; Hazel M. Battelle; Carlton J. Heggan"},
+  {n:"Beath",d:"William F. & Ruth Louise Beath; Mrs. Evelle Beath (resigned Sunday School 1930)"},
+  {n:"Beggs",d:"Rev. Dr. Joseph E. Beggs — longest-serving pastor (30 Sep 1984–Jul 2023); 39 years"},
+  {n:"Bishop",d:"Mrs. Anna Mary Bishop; John G. & Ernestina Bishop; children Charles Frederick, Mary Edna"},
+  {n:"Boogar / Boogher",d:"Carl, Ellison Charles, Anna, William, Mrs. Nellie Walker, Sophie R. Boogar; Ellison & Anna dismissed to Atco Presbyterian"},
+  {n:"Brimfield",d:"Mr. & Mrs. George (Donna) Brimfield — Deacon 1-year term (1981); Brimfield family donated carillon bell system"},
+  {n:"Brodbeck",d:"Mary, Henry Louis, George Jacob, Mamie, Jacob Brodbeck"},
+  {n:"Brogden",d:"Mr. David (Dave) Brogden — Deacon (13 Dec 1962 & Jan 1967); Mrs. Ethel Brogden — Deacon (1984)"},
+  {n:"Campbell",d:"Mrs. Howard Campbell — Sunday School teacher (1930s); Rev. James R. Campbell (installation service, 1878)"},
+  {n:"Carpenter",d:"Ruling Elder Clinton DeWitt Carpenter (1867–1876) & Mrs. A. Carpenter; Miss Cora Maria Carpenter; Mrs. Rose Carpenter"},
+  {n:"Chorpenning",d:"Mrs. Agnes Mill Chorpenning; Frank Chorpenning; Helen Kemtha Chorpenning; Marion Chorpenning; Ralph & William Chorpenning; Lillian Chorpenning — Y.P.S.C.E. Secretary"},
+  {n:"Cline",d:"Mr. Edward Cline — Ruling Elder (Class of 1984)"},
+  {n:"Clover",d:"Mr. Richard Clover (Trustee, Treasurer) & Mrs. Johanna K. Clover; Estelle Julia (Salty) Clover Greene"},
+  {n:"Collings / Collins",d:"Mr. & Mrs. Edward Collings (Waterford, 1875); daughters Sally & Annie"},
+  {n:"Congdon",d:"Mr. John Congdon (b.21 Nov 1907) & Ella (Endres) Congdon (b.7 Oct 1910); children Louetta, John Jr., George, Joy Diane, Virginia (Ginny); Ruling Elder (1960–1963); Benevolence Treasurer (1981)"},
+  {n:"Cook",d:"Mrs. Donald (Norma Holloway) Cook — Ruling Elder (Class of 1984); Rev. Charles D. Cook — pastor (1915–1916)"},
+  {n:"Crowley",d:"William & Annie Mary (Graule) Crowley; Helena, Charles Albert, William C. Crowley"},
+  {n:"Day",d:"Miss Theresa Day — Y.P.S.C.E. Secretary (1892–1895); Miss Clara Cora Day; Miss Lean S. Day"},
+  {n:"DeLanzo",d:"Mrs. Harriett DeLanzo — sub-Organist (fall 1958)"},
+  {n:"Del Monte",d:"Mrs. Gail (Passarella) Del Monte — Church Historian; Jr. Choir Director (1977–present); first public handbells director"},
+  {n:"Dowell",d:"Mr. David (Dave) Dowell — Ruling Elder (1981); Choir Director (1984–1992)"},
+  {n:"Duble",d:"Norman & Franny Duble; Mr. A.A. (Zan) Duble; Mrs. Albert (Hazel M.) Duble — Sunday School Secretary; Emma Duble; Ida Duble; Mrs. W. Duble; Mrs. Alexander (Mardi) Duble — Jr. Choir Dir. (1950s–1977); Frances Olga (Mussell) Duble"},
+  {n:"Ehrke",d:"Mrs. Esther Ehrke — Deacon (Class of 1984)"},
+  {n:"Ellsworth",d:"Mr. Byron Ellsworth (charter, 1867); Albina Ellsworth; Harold & Esther Ellsworth; Mrs. Lynn Ellsworth"},
+  {n:"Eppleman",d:"Mr. & Mrs. Edward Eppleman (1921); Miss Alethia Eppleman"},
+  {n:"Ewan",d:"Mr. Eugene Ewan — Organist (1951–1954); Mrs. Frances (Hayes-Maier) Ewan (6 Sep 1934–4 Jul 2024) — Special Music"},
+  {n:"Fallon",d:"Nancy Fallon — Food Bus Ministry director (present)"},
+  {n:"Ford",d:"Rev. Charles Ford — occasional visiting pastor (1851–c.1861)"},
+  {n:"Franke / Frankle",d:"Carol Dale Franke; Doris Louisa Franke (Waterford, 1951); Ethel May Frankle; George W. Frankle"},
+  {n:"Franks",d:"Mrs. Maria Louisa Franks (Atco, 1874); Frederick W. Franks (d.17 Nov 1904)"},
+  {n:"Frost",d:"Mr. & Mrs. F.W. Frost; Miss Alice Frost — Sunday School"},
+  {n:"Giddings",d:"Mr. & Mrs. S. Giddings (charter, 1867); Mrs. Julia Giddings; Walter Giddings; Mr. N. Giddings; Mr. W.O. Gidding; Orville Tiffany Gidding"},
+  {n:"Githens",d:"Mr. & Mrs. Caleb B. (Gracie) Githens — Ladies Guild Secretary; Andrew Jackson Githens; Monroe Githens; Helen Githens; George V. Githens"},
+  {n:"Gordon",d:"Mrs. Chuck (Doris) Gordon — introduced PIP Page, July 1990"},
+  {n:"Gould",d:"Mrs. Thankful Gould; Miss Clara Gould; Miss Mary E. Gould (charter 1867)"},
+  {n:"Green",d:"Professor Henry A. Green — Founding Trustee; Atco Library director; Mrs. L.M. Green (charter); Mrs. Elizabeth Greene; Norman Williams Greene"},
+  {n:"Githens",d:"Miss Helen Githens; Mrs. C.B. (Gracie) Githens — Ladies Guild Secretary"},
+  {n:"Hand",d:"Miss Carrie Hand — Organist asst. (1899–1940); Mrs. James Hand; Mr. John E. Hand (hosted founding meeting); Mrs. B.A. (Bart) Hand — Ladies Guild President; Miss Dessie Hand; Bartram A. Hand; Miss Mary Hand"},
+  {n:"Hannaway",d:"Rev. W. Gordon Hannaway — pastor (20 Sep 1940–1 Oct 1963)"},
+  {n:"Harbert",d:"Mr. Donald Harbert — Choir Director (2008–2009); Faith Fund overseer for accessibility improvements"},
+  {n:"Harrison",d:"Rev. Joseph Harrison — pastor (1927–1929); Joseph C. Harrison Jr. & Elizabeth & May Virginia"},
+  {n:"Heggan",d:"Alexander & Annie Heggan (Waterford, 1866); children Paul Logan (b.28 Mar 1870), John (b.28 Dec 1872), Rebecca; Reuben D. & Amelia R. Heggan; Robert R., Doris E., Paul L., Lois May, Jary Horace Heggan"},
+  {n:"Henderson",d:"John & Lillie Henderson (d.1918); Mr. John Henderson (Elder, dismissed 1927); John Henderickson (Y.P.S.C.E. 1893)"},
+  {n:"Henry",d:"Mr. Eugene Henry (5 Feb 1932–24 May 2024) — Special Music on Piano/Organ"},
+  {n:"Hoag",d:"Winiford Avis Hoag; Ray C. Hoag; Myrtle B. Hoag; Virginia S. Hoag (Waterford roll, 1951)"},
+  {n:"Holton",d:"Mr. Charles Cyril Holton; Laura Evans Holton; Ella Marie Holton; Mrs. Charles Holton — Ladies Guild President; Fred (Fritz) Holton; Mrs. Frederick (Joyce) Holton — Deacon (1981); Mrs. Stanley (Kathy Holton) Banes"},
+  {n:"Hurry",d:"Mr. Thomas Hurry; Clara Catherine Hurry (Sunday School)"},
+  {n:"Ieropoli",d:"Mr. Com Ieropoli — Session member (1979)"},
+  {n:"Jackson",d:"Mrs. Bertha & Mary J. Jackson (1925)"},
+  {n:"Jensen",d:"Mr. Warren Jensen — Board member (Joint Meeting 1962)"},
+  {n:"Jumm",d:"Catherine & Michael Jumm (Waterford, 1950)"},
+  {n:"Kelling",d:"Mr. Conrad Kelling (d.) & Mrs. Hannah Kelling & Miss Lizzie Kelling (Waterford, 1876)"},
+  {n:"Kling",d:"Estella M. Kling; Mrs. Mildred Kling; William H. Kling; Harriet Kling (Waterford roll)"},
+  {n:"Knoll",d:"Mrs. Donald (Joan) Knoll — found photo of Old Church; Margaret Mason Knoll; Earl Knoll"},
+  {n:"Loomis",d:"Rev. Samuel Loomis — First Pastor (Nov 1867); Mrs. Mary R. Loomis (charter 1867)"},
+  {n:"Lowndes",d:"Mary Lowndes (1857–1929) — Stained Glass Art; oil portrait found in church by Gail Passarella"},
+  {n:"Maccaroni",d:"Jean Maccaroni; Warren Maccaroni Sr. & Jr. (Waterford, 1950)"},
+  {n:"Mac Dougall / McDougall",d:"Ruling Elder James Mac Dougall (1824–1917) — Waterford; Elizabeth (Fairbairn) McDougall; children Carrie Hannah, Robert (& Mary P.), Joseph B.; James Murray McDougall"},
+  {n:"McFerran",d:"Mrs. Lawrence (Irene Schleinkofer) McFerran — Organist (1954–1974; b.1926, d.1976); Mrs. Elinor McFerran — Deacon 1-year term (1981)"},
+  {n:"McHarg / McHargh",d:"Mr. Peter McHargh — original Trustee; Miss Margaret (Maggie) McHargh — Trustee & Sunday School teacher; baptismal font dedicated in her memory (1923)"},
+  {n:"McNally",d:"Mr. Richard & Mrs. Elsie McNally; Rev. William McNally — pastor (1923–1926)"},
+  {n:"Mensinger",d:"Miss Joyce Mensinger; Mrs. Jesse Mensinger (Ladies Guild)"},
+  {n:"Mont",d:"Rev. Stanley J. Mont — pastor (Dec 1963–Dec 1968); united Atco & Waterford (1964)"},
+  {n:"Murray",d:"Mr. William A. Murray (conveyed Atco Ave lot, 1916); Mr. & Mrs. W.W.P. Murray; Mr. William F. Murray"},
+  {n:"Neff",d:"Harold Neff; Lillian May Neff; Marian Doris Neff; Mrs. Edith Neff"},
+  {n:"Neipling / Niepling",d:"George & Anna Neipling (Waterford); Harry, Edith R., Lois M., Homer, Bessie I. Neipling; Lucy Neipling"},
+  {n:"Newberry",d:"Rev. E.D. Newberry — pastor (1868–1873); dedicated first church edifice March 1869"},
+  {n:"O'Neal / O'Neil",d:"Viola O'Neal; Miss Lucilla O'Neal; Phil, Frank, John O'Neal; Ethel O'Neal"},
+  {n:"Ottey",d:"Mr. W.H. Ottey & Mrs. W.H. Ottey — Sunday School Statistical Secretary & Board of Trustees"},
+  {n:"Pancoast",d:"Rev. Caleb L. Pancoast — pastor (1929–1936); Mrs. Caleb Pancoast — Ladies Guild Treasurer 1935"},
+  {n:"Passarella",d:"Gail (Passarella) Del Monte — Church Historian; Jr. Choir Dir. (1977–present); George Congdon married Gertrude (Trudi) Passarella, Nov 1968"},
+  {n:"Peacock",d:"Mr. Amos & Mrs. Amos Peacock; Samuel B. Peacock; Lawrence E. Peacock; William Peacock; Joseph Peacock"},
+  {n:"Pelikoski",d:"Mrs. Josephine Pelikoski — Bluebirds Treasurer (1981)"},
+  {n:"Pemberton",d:"Rev. Gary Pemberton — pastor (10 May 1981–15 Aug 1983)"},
+  {n:"Pennock",d:"Mrs. William (Caroline) Pennock — Treasurer (1981)"},
+  {n:"Pierce",d:"Mrs. William (Ella I.) Pierce — Ladies Guild Secretary; Mary L. Pierce (Waterford)"},
+  {n:"Pitman",d:"Harold & Mrs. Harold (Marion) Pitman — Ladies Guild Secretary"},
+  {n:"Plant",d:"Mr. L.W. Plant & Mrs. Lizzie Plant — received from Lafayette Ave Pres., Brooklyn (1868)"},
+  {n:"Porter",d:"William Porter (Waterford donor: lot, siding, glass); Miss Mary H. Porter (charter Waterford); Miss Hannah C., Elizabeth H., Margaret G. Porter"},
+  {n:"Price",d:"Mr. William (Bill) Price — Session member (1979)"},
+  {n:"Purdy",d:"Mr. George Purdy — Ruling Elder serving (1979); Board of Deacon Treasurer (1981)"},
+  {n:"Ranck",d:"Mr. Guy Ranck; Mrs. Guy (Martha) Ranck — Session member (1979)"},
+  {n:"Rapp",d:"Mrs. Mary Rapp — VBS Director (1960s); Deacon elected 1967"},
+  {n:"Ray",d:"Mrs. Elizabeth D. Ray — Ruling Elder (22 Jan 1967)"},
+  {n:"Regn",d:"Lottie Eva, Lewis Holt, Mildred Grace, George, Joe, Jacob Regn"},
+  {n:"Richards",d:"Mr. Thomas Richards Jr. (29 Apr 1828–18 Jan 1910) — key benefactor & Founding Trustee; Mrs. Deborah (Milhouse Kimber) Richards; Samuel Richards"},
+  {n:"Riley",d:"Mr. Patrick Riley of Hammonton, NJ — Handbells Director (2008–present); Organist (2012–present); Choir Director (2015–Oct 2024); Grace Riley — Y.P.S.C.E. Secretary"},
+  {n:"Ritter",d:"Mr. John L. Ritter & wife — Ruling Elder (elected 1927); Clerk of Session pro tem"},
+  {n:"Robinson",d:"Rev. Jack L. Robinson — pastor (Oct 1969–Jul 1980); William Robinson (Waterford Ruling Elder, 1866)"},
+  {n:"Rukaber",d:"Francis X. & Clara Rukaber; Emmanuel, Loretta, Carrie, Retta, Fred Rukaber"},
+  {n:"Ryan",d:"Magdalene Ryan (enrolled 1 Jan 1956, Waterford)"},
+  {n:"Schlachter",d:"Mrs. Gregory (Karen Duble) Schlachter — Jr. Choir Director; author of hero quote; 12th Bell Choir Fund"},
+  {n:"Schleinkofer",d:"George & Frederica (Freda) Schleinkofer (received 1892); Theodore Schleinkofer — Elder, Pipe Organ donor (1930); Mrs. Theodore (Dessima) Schleinkofer — Organist (1899–1940), Ladies Guild Secretary, conducted Messiah 1935; children Lana, Evelyn, Norman, Maretta, Ruth; John & Elizabeth Schleinkofer; Susan, Christina, Mary, Miss E.M., Miss Lorna, Norman George Schleinkofer; Josephine Schleinkofer"},
+  {n:"Schwartz",d:"Dr. Henry C. Schwartz & Mrs. Mary Schwartz — joined 1926; only Atco doctor for years; 'pies & eggs' during Depression; daughter Drusilla (Lynch); son Henry Clay Jr. ('Doc')"},
+  {n:"Shinn",d:"Rev. James G. Shinn — pastor (1873–1877; installed Waterford 1878); Mrs. Marion Winetta Shinn; Betty Albert Shinn"},
+  {n:"Shockley",d:"Mrs. James (Jean) Shockley of Atco, NJ — Organist (fall 1981–June 2012)"},
+  {n:"Skinner",d:"Ruling Elder Myron J. Skinner (received 1894, d.12 Mar 1905); Mrs. Myron J. Skinner"},
+  {n:"Sloan",d:"Mr. Adam Riley Sloan (b.1840; Atco, 1874) & Mrs. A.R. Sloan; Mrs. Adam (Maude) Sloan — first musician (1869); Mr. William Sloan; Lucy Emily Sloan"},
+  {n:"Smith",d:"Lillian R. Smith; Edith May Smith; Mrs. Edith R. (Scribner) Smith; Sallie Smith"},
+  {n:"Snyder",d:"Mr. & Mrs. Edward W. Snyder — Certificate of Dismissal from Oliveden Presbyterian, Philadelphia (8 Mar 1956); residing at 40 Spruce St, Marlton Lakes, Atco, NJ; Ruling Elder (22 May 1960–1963); Deacon (13 Dec 1962); Ruling Elder (22 Jan 1967); serving thru 1981 (Class of 1984)"},
+  {n:"Soistmann",d:"Fred S. Soistmann & William Harris Soistmann (Waterford, received 5 Oct 1952)"},
+  {n:"Sorge",d:"Mrs. Cindy Sorge — HandBells/Choir Director (1992–2008); founded Atco Christ Chimes"},
+  {n:"Squier",d:"Rev. William L. Squier — pastor (1904–1911); 39th Anniversary Address; Mrs. Julia B. Squier; Miss Emmelle L. Squier"},
+  {n:"Stevenson",d:"Rev. Josiah T. Stevenson — pastor (1898–24 Mar 1903)"},
+  {n:"Straley",d:"Philip James Straley & Clara Maorie Straley; Philip J. Straley (Waterford — marked off roll 1935)"},
+  {n:"Talcott",d:"Mr. W.O. Talcott — original Trustee; Mr. E.A. Talcott; Mrs. Lois Talcott"},
+  {n:"Tapper",d:"Mrs. Judy Tapper — donated new sanctuary carpet (accepted 1979)"},
+  {n:"Tappert",d:"Miss Elizabeth M. Tappert — Sunday School Secretary (1930s) & Pianist Assistant"},
+  {n:"Tiffany",d:"Mr. A.R. Tiffany (5-year term Trustee); Mr. O.B. Tiffany; Mr. Giddings C. Tiffany"},
+  {n:"Troendle",d:"Sara Troendle — organized Food Bus Ministry"},
+  {n:"Turrell",d:"Mr. Herman F. Turrell & Mrs. Mary E. Turrell (received 1888); Mr. H. Turrell (charter 1867)"},
+  {n:"Van",d:"Mr. Stephen Van & Mrs. Hannah Van (d.1906) — charter; Riley Van"},
+  {n:"Varnum",d:"Nelson Varnum; Joseph Varnum (d.11 Sep 1920); James F. Varnum (d.26 Mar 1921); Mr. C. Eddy Varnum — Y.P.S.C.E. President; Clarence Edward Varnum; Ella J. Varnum; Lillie M. Varnum; Essie Varnum; Edward Varnum"},
+  {n:"Wakelee",d:"Mr. M.A. Wakelee — original Trustee; Mrs. P.S. Wakelee (charter 1867); Mrs. P.L. Wakelee"},
+  {n:"Weiss",d:"Mr. Henry Weiss — Deacon (Class of 1984)"},
+  {n:"Woodland",d:"Mr. Charles A. Woodland — Trustee, Treasurer (faithful accounting); Mrs. Sarah E. Woodland"},
+  {n:"Wurts",d:"Mr. T.F. Wurts; Edward Van Uzem Wurts; Miss Jeanette L. Wurts (Waterford, 1888)"},
+  {n:"Wynocker",d:"Miss Mary E. Wynocker; Harvey Wynocker; Ethel Etta Wynocker; Charles Wynocker"},
+  {n:"Young",d:"Edward B. Young; George Young (Y.P.S.C.E. 1893)"},
+  {n:"Zook",d:"Mr. Joe Zook of Atco, NJ — Organist (1954–1981); first Allen Organ player; Easter 6 AM tradition; passed suddenly 1981"},
+  {n:"Zoppel",d:"Mr. Lou Zoppel — Board President (Joint Meeting Jan 1962)"}
+];
+
+/* ─────────────── BUILD PEOPLE GRID ─────────────── */
+const grid=document.getElementById('people-grid');
+PEOPLE.sort((a,b)=>a.n.localeCompare(b.n));
+PEOPLE.forEach(f=>{
+  const d=document.createElement('div');
+  d.className='fam-entry';
+  d.dataset.search=(f.n+' '+f.d).toLowerCase();
+  d.innerHTML=`<div class="fam-name">${f.n}</div><div class="fam-desc">${f.d}</div>`;
+  grid.appendChild(d);
+});
+document.getElementById('psearch').addEventListener('input',function(){
+  const q=this.value.toLowerCase().trim();
+  document.querySelectorAll('.fam-entry').forEach(e=>{
+    e.classList.toggle('hidden',q&&!e.dataset.search.includes(q));
+  });
+});
+
+/* ─────────────── DECADE ACCORDION ─────────────── */
+document.querySelectorAll('.decade-hdr').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const body=btn.nextElementSibling;
+    const open=body.classList.toggle('show');
+    btn.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',String(open));
+  });
+});
+
+/* ─────────────── EVENT ROW EXPAND ─────────────── */
+document.querySelectorAll('.event-row').forEach(row=>{
+  row.addEventListener('click',e=>{
+    if(e.target.closest('a'))return;
+    row.classList.toggle('open');
+  });
+});
+
+/* ─────────────── SEARCH & FILTER ─────────────── */
+const searchEl=document.getElementById('search');
+const filterBtns=document.querySelectorAll('.fbtn');
+const allRows=Array.from(document.querySelectorAll('.event-row'));
+const noResultsEl=document.getElementById('no-results');
+const resCtEl=document.getElementById('res-ct');
+let curCat='all', curQ='';
+
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9 ]/g,' ')}
+
+function runUpdate(){
+  const q=norm(curQ);
+  const terms=q.split(/\s+/).filter(t=>t.length>1);
+  let visible=0;
+
+  document.querySelectorAll('.decade').forEach(dec=>{
+    const body=dec.querySelector('.decade-body');
+    const hdr=dec.querySelector('.decade-hdr');
+    let decVis=0;
+
+    dec.querySelectorAll('.event-row').forEach(row=>{
+      const cat=row.dataset.cat||'';
+      const text=norm((row.dataset.text||'')+' '+row.textContent);
+      const catOk=curCat==='all'||cat===curCat;
+      const qOk=terms.length===0||terms.every(t=>text.includes(t));
+      const show=catOk&&qOk;
+      row.classList.toggle('match-hidden',!show);
+      if(show){decVis++;visible++;}
+      if(show&&terms.length>0) applyHighlight(row,terms);
+      else clearHighlight(row);
+    });
+
+    const hideEra=decVis===0&&(terms.length>0||curCat!=='all');
+    dec.style.display=hideEra?'none':'';
+
+    if(decVis>0&&(terms.length>0||curCat!=='all')){
+      body.classList.add('show');
+      hdr.classList.add('open');
+      hdr.setAttribute('aria-expanded','true');
+    }
+  });
+
+  noResultsEl.style.display=visible===0?'block':'none';
+  resCtEl.textContent=(curQ||curCat!=='all')?visible+(visible===1?' event':' events'):'';
+}
+
+function applyHighlight(row,terms){
+  row.querySelectorAll('.ev-title,.event-detail p,.event-detail .eq').forEach(el=>{
+    if(!el.dataset.orig)el.dataset.orig=el.innerHTML;
+    let h=el.dataset.orig;
+    terms.forEach(t=>{
+      const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      h=h.replace(re,'<mark>$1</mark>');
+    });
+    el.innerHTML=h;
+  });
+}
+function clearHighlight(row){
+  row.querySelectorAll('[data-orig]').forEach(el=>{
+    el.innerHTML=el.dataset.orig;
+    delete el.dataset.orig;
+  });
+}
+
+searchEl.addEventListener('input',()=>{curQ=searchEl.value.trim();runUpdate()});
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    curCat=btn.dataset.cat;
+    runUpdate();
+  });
+});
+
+runUpdate();
+</script>
+</body>
+</html>
