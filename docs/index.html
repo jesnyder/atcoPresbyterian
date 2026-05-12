@@ -63,12 +63,16 @@
     }
     .header-inner { max-width: 860px; margin: 0 auto; }
     .church-logo {
-      width: 88px; height: 88px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-      border-radius: 50%;
-      background: rgba(255,255,255,.12);
-      padding: 6px;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.45);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .site-header h1 {
       font-family: var(--font-serif);
@@ -245,6 +249,8 @@
       box-shadow: 0 0 0 1px var(--era-color, #aaa);
     }
     .event-entry.ev-national .event-dot { background: #888; box-shadow: 0 0 0 1px #888; }
+    .event-entry.ev-atco .event-dot { background: #5a7a4a; box-shadow: 0 0 0 1px #5a7a4a; }
+    .event-entry.ev-atco .event-btn { border-left-color: #5a7a4a; }
     .event-btn {
       width: 100%; text-align: left;
       background: var(--color-card);
@@ -288,6 +294,7 @@
       width: 100%; max-width: 420px; height: auto; display: block;
       border-radius: var(--radius); border: 1px solid var(--color-border);
     }
+    .event-image.event-image--wide img { max-width: 720px; }
     .event-image figcaption { font-size: .77rem; color: var(--color-subtle); margin-top: .3rem; font-style: italic; }
     /* No-results message */
     .tl-empty { text-align: center; padding: 3rem 1rem; color: var(--color-muted); font-style: italic; display: none; }
@@ -379,6 +386,34 @@
     .family-members li { margin-bottom: .25rem; }
 
     /* ─── Footer ─────────────────────────────────────────────────────────── */
+    /* ─── Map Section ───────────────────────────────────────────────────────── */
+    .map-section {
+      background: var(--color-bg);
+      border-top: 2px solid var(--color-border);
+      padding: 3rem 1.5rem 3.5rem;
+    }
+    .map-section-inner { max-width: 900px; margin: 0 auto; }
+    .map-section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--color-navy);
+      margin-bottom: .6rem;
+    }
+    .map-section-caption {
+      font-size: .88rem;
+      color: var(--color-muted);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+    }
+    .map-figure { margin: 0; }
+    .map-figure img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────────────── */
     .site-footer {
       background: var(--color-navy-dark);
       color: #9db3d4;
@@ -430,8 +465,8 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <img src="https://www.atcopres.org/s/misc/logo.png"
-         alt="Atco United Presbyterian Church logo"
+    <img src="images/church-building.jpg"
+         alt="Atco United Presbyterian Church building, 449 Second Street, Atco, NJ"
          class="church-logo"
          onerror="this.style.display='none'">
     <h1>Atco United Presbyterian Church</h1>
@@ -456,6 +491,18 @@
     </noscript>
   </div>
 </main>
+
+<section class="map-section" aria-label="1925 Sanborn Map of Atco">
+  <div class="map-section-inner">
+    <h2 class="map-section-title">Atco, New Jersey — 1925 Sanborn Fire Insurance Map</h2>
+    <p class="map-section-caption">Sanborn Map Company, April 1925. The <strong>First Presbyterian Church</strong> is listed on Sheet 1 (Atco Ave. &amp; Second Street), just three years after the 1922 building was dedicated. Population of Atco: 1,000. Source: Library of Congress.</p>
+    <figure class="map-figure">
+      <img src="images/map-1925-sanborn.webp"
+           alt="1925 Sanborn Fire Insurance Map of Atco, NJ — First Presbyterian Church shown on Sheet 1"
+           loading="lazy">
+    </figure>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -482,6 +529,7 @@
         <li>Internet Archive Wayback Machine &mdash; <a href="https://web.archive.org/web/*/https://www.atcopres.org/" target="_blank" rel="noopener">archived snapshots of atcopres.org</a></li>
         <li><em>First Presbyterian Church of Atco, N.J.: Minutes of the Session, 1867–1928</em></li>
         <li>Presbyterian Historical Society, 425 Lombard Street, Philadelphia, PA</li>
+        <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Atco,_New_Jersey" target="_blank" rel="noopener">Atco, New Jersey</a> (local history, naming, notable residents)</li>
       </ul>
     </div>
     <p class="footer-credit">Timeline prepared 2026. Content drawn from church records, member-written histories, and the church website. Images courtesy atcopres.org. Not for commercial use.</p>
@@ -500,6 +548,9 @@ var ERAS = [
   color:'#1a5c33',
   summary:'Two years after the end of the Civil War, a handful of faithful Atco residents gathered in a shop hall, a family parlor, and a hotel to form a congregation. In November 1867, the First Presbyterian Church of Atco was officially organized — with Rev. Samuel Loomis as its first minister. Within two years, a dedicated building stood on Raritan Avenue.',
   events:[
+    {year:'1854 — Atco History',title:'Camden & Atlantic Railroad Creates the Settlement of Atco',
+     summary:'The 1854 Camden and Atlantic Railroad crossed the Pine Barrens to Atlantic City — and the rail stop it created became the community of Atco.',
+     detail:'In 1854, the Camden and Atlantic Railroad was founded, cutting through the Pine Barrens of South Jersey from Camden to Atlantic City. The railroad was the reason Atco existed: the community grew up around the rail stop, bringing residents, commerce, and eventually the institutions — including the First Presbyterian Church of Atco — that would define the town.\n\nShortly after, the Raritan and Delaware Bay Railroad established a second line connecting Atco to Toms River, Waretown, Atsion, and Vineland, making Atco a modest hub in the rural South Jersey rail network.\n\nAtco sits in Waterford Township, Camden County, approximately 16 miles southeast of Camden, at the western edge of Wharton State Forest and the Pine Barrens. Atco Lake — a 30-acre body of water — lies within the community. When the founding members gathered in 1866 to discuss organizing a Presbyterian church, they were doing so in a railroad town barely a decade old.'},
     {year:'1865 — National Context',title:'Civil War Ends; Reconstruction Begins',
      summary:'The American Civil War ended in April 1865 — just two years before Atco\'s congregation was founded. The nation entered Reconstruction.',
      detail:'The Civil War ended on April 9, 1865, with General Lee\'s surrender at Appomattox Court House. The nation entered Reconstruction (1865–1877) — marked by the 13th, 14th, and 15th Amendments abolishing slavery, granting citizenship, and extending voting rights. The men and women who gathered to found the First Presbyterian Church of Atco in 1867 had lived through four years of civil war. Their determination to build a congregation was itself an act of hope and renewal.'},
@@ -531,10 +582,7 @@ var ERAS = [
   events:[
     {year:'March 1869 (First Sunday)',title:'New Church Edifice Dedicated',
      summary:'The first church building was dedicated to the service and worship of Almighty God, with Rev. Newberry officiating.',
-     detail:'On the first Sunday of March 1869, the new church edifice was dedicated to the service and worship of Almighty God — the service officiated by Rev. E.D. Newberry, Moderator. Services were held every Sabbath morning at 10½ o\'clock and Sabbath School at 12 o\'clock Noon. Thirty people had been received into membership since the church\'s founding.',
-     image:{src:'https://www.atcopres.org/s/cc_images/cache_4110577133.jpg',
-            alt:'Atco United Presbyterian Church building',
-            caption:'Atco United Presbyterian Church (Photo: atcopres.org)'}},
+     detail:'On the first Sunday of March 1869, the new church edifice was dedicated to the service and worship of Almighty God — the service officiated by Rev. E.D. Newberry, Moderator. Services were held every Sabbath morning at 10½ o\'clock and Sabbath School at 12 o\'clock Noon. Thirty people had been received into membership since the church\'s founding.'},
     {year:'1868–1873',title:'Rev. E.D. Newberry: Pastor of Atco & Berlin',
      summary:'Rev. Newberry completed the church building and guided the young congregation through its first years.',
      detail:'Rev. E.D. Newberry served as Pastor of Atco and Berlin from 1868 through 1873. He had been "largely instrumental in founding and fostering to self supply" both the Atco and Vineland churches. Under his oversight, the church building was completed and dedicated in March 1869. Rev. George Warrington (1872–1873) served as Ministerial Supply during the transition.'},
@@ -627,6 +675,9 @@ var ERAS = [
     {year:'1898–March 24, 1903',title:'Rev. Josiah T. Stevenson: Pastor',
      summary:'Rev. Stevenson introduced the envelope tithing system and weekly prayer meetings, deepening the congregation\'s spiritual life.',
      detail:'Rev. Josiah T. Stevenson served from 1898 to March 24, 1903. In 1898 (the year a U.S. green stamp cost $0.01), the Board of Trustees unanimously adopted the Numbered Envelope System for Church tithing. Weekly Prayer meetings occurred under Rev. Stevenson\'s direction, along with a three-month study titled "Life of Christ," published by International Lessons.\n\nIn December 1902, the Presbyterial Per Capita Tax contribution was set at $0.40 per member. Rev. E. Isett (1902) served as Ministerial Supply.'},
+    {year:'1902–1903 — Atco History',title:'The Name "Atco" — Atlantic Transport Company',
+     summary:'The name "Atco" derives from the Atlantic Transport Company, which placed a major ship order with a Camden shipyard around 1902–1903. An alternative theory links it to a Lenape word meaning "Land of many deer."',
+     detail:'The origin of the name "Atco" is tied to the Atlantic Transport Company of West Virginia, which placed a significant ship order with the New York Shipbuilding Corporation in Camden, NJ, around 1902–1903. This connection led to the name being adopted for the community.\n\nAn alternative theory holds that the name has indigenous roots — from a Lenape word meaning "Land of many deer" — reflecting the area\'s heritage in the Pine Barrens of South Jersey, long a hunting ground before European settlement.\n\nWhatever its exact origin, by the early twentieth century "Atco" was firmly established as the name of this small South Jersey railroad town — and the congregation that would become Atco United Presbyterian Church was already 35 years old.'},
     {year:'September 14, 1901 — National Context',title:'President McKinley Assassinated',
      summary:'President McKinley was shot on September 6, 1901 and died September 14, elevating Theodore Roosevelt to the presidency.',
      detail:'President William McKinley was shot by anarchist Leon Czolgosz at the Pan-American Exposition in Buffalo, New York, on September 6, 1901, and died eight days later. Vice President Theodore Roosevelt, 42 years old, became the youngest president in American history. Roosevelt\'s presidency ushered in the Progressive Era — marked by trust-busting, conservation, and reform. These national events were felt in small congregations like Atco, whose members followed the nation\'s news closely.'},
@@ -712,9 +763,16 @@ var ERAS = [
     {year:'July 9, 1922 at 10:30 AM',title:'Dedication of the New Church',
      summary:'The new church on Atco Avenue & Second Street was dedicated, with Rev. R.E. Muthard installed as pastor.',
      detail:'On July 9, 1922 at 10:30 o\'clock, the Service of Dedication of the "New Church" — First Presbyterian Church of Atco, NJ — was held. Rev. R.E. Muthard, a recent Princeton Seminary graduate, was installed as pastor. The Rev. Robert I. MacBride, Ph.D., Moderator of West Jersey Presbytery, presided.\n\nThe new building, built on land acquired in 1916 for $2,000, represented the culmination of decades of faithful saving and community effort.',
-     image:{src:'https://www.atcopres.org/s/cc_images/cache_4110577133.jpg',
+     image:{src:'images/church-building.jpg',
             alt:'Atco United Presbyterian Church building',
             caption:'Atco United Presbyterian Church, 449 Second Street, Atco, NJ (Photo: atcopres.org)'}},
+    {year:'April 1925 — Atco History',title:'Sanborn Fire Insurance Map: Atco, NJ',
+     summary:'The 1925 Sanborn Map documents Atco with a population of 1,000 — and labels the First Presbyterian Church on Sheet 1, at Atco Avenue & Second Street, just three years after the new building was dedicated.',
+     detail:'In April 1925, the Sanborn Map Company produced a fire insurance survey of Atco, Camden County, NJ. The map records:\n\n• Population: 1,000\n• Water Facilities: None\n• Fire Dept.: Volunteer — 15 active members, one pull cart, 300 ft. of hose\n\nThe Index of Specials identifies the following landmarks:\n• First Presbyterian Church — Sheet 1 (Atco Ave. & Second Street)\n• Atco Methodist Episcopal Church — Sheet 3\n• National Bank Building — Sheet 2\n• Post Office — Sheet 2\n• Public School — Sheet 2\n• W.J. & S. Railroad Depot — Sheet 2\n• Union Novelty Mfg. Co. (Brooms) — Sheet 2\n• Texas Co. Oil Tanks — Sheet 3\n\nThe First Presbyterian Church of Atco appears on Sheet 1 — the central block at Atco Avenue and Second Street (today 449 Second Street). The church had been dedicated just three years earlier, on July 9, 1922. The streets visible in the detailed portion of the map — Atco Ave., Auburn Ave., Bartram Ave., 2nd through 5th Streets — are the same streets that surround the church today.',
+     image:{src:'images/map-1925-sanborn.webp',
+            alt:'1925 Sanborn Fire Insurance Map of Atco, NJ, showing the First Presbyterian Church on Sheet 1',
+            caption:'Sanborn Fire Insurance Map — Atco, Camden County, NJ, April 1925. First Presbyterian Church is listed under "Specials" on Sheet 1 (Atco Ave. & Second Street). Population: 1,000. (Source: Library of Congress)',
+            wide:true}},
     {year:'November 30, 1922',title:'55th Anniversary Celebration',
      summary:'The 55th Anniversary brought $500 in birthday gifts, memorial oak pedestals, a communion table, two pianos, and new communion cups.',
      detail:'On November 30, 1922, the congregation celebrated the 55th Anniversary with birthday gifts totaling approximately $500. Two beautiful oak pedestals were presented as a "Memorial." Other gifts: a beautiful Oak Communion Table as a memorial to the late Joseph R. Varnum, former elder; two pianos from the Christian Endeavor Society and the "Bluebirds"; additional cups and trays to the Communion Service from the Men\'s Class; and other beautiful chairs purchased by various classes.'},
@@ -851,6 +909,9 @@ var ERAS = [
     {year:'October 1969 – July 1980',title:'Rev. Jack L. Robinson: Pastor',
      summary:'Rev. Robinson\'s eleven-year pastorate introduced Praise Dancers, contemporary music, the Mariners young adult group, and the Bell Choir.',
      detail:'Rev. Jack L. Robinson became pastor in October 1969 and served through July 1980 — the second longest serving pastor in the church\'s history at that time.\n\n• October 1969: Praise Dancers were begun under his and his wife Jo\'s leadership.\n• "The Mariners" — a very active young adult group — was established.\n• The church began working more with local indigent homes.\n• Contemporary music was introduced using a Gaither Family SongBook; a new hymnal, "Hymns for the Family of God," was purchased.\n• 1977–2017: The Junior Choir grew and became very active under Karen (Duble) Schlachter and Gail Passarella — a ministry spanning four decades.\n• Bell Choir Fund: Established by Mrs. Karen (Duble) Schlachter and Ms. Gail Passarella. The congregation donated each bell until the Basic Set was purchased. The first public handbell performance was by the "Bluebirds" of the 1980s — "Morning Has Broken," directed by Gail Passarella. The Atco Christ Chimes (name changed 1992) performed under Mrs. Cindy Sorge and today under Mr. Patrick Riley of Hammonton, NJ.'},
+    {year:'c. 1960 — Atco History',title:'Atco Raceway Opens',
+     summary:'Atco Raceway opened around 1960 and operated for 63 years as a beloved South Jersey drag strip — a community landmark that drew racing fans from across the region.',
+     detail:'Atco Raceway opened around 1960 and became one of South Jersey\'s most beloved community institutions. For 63 years the drag strip hosted races that drew families and fans from across the region, deeply woven into the fabric of Atco life.\n\nThe raceway was also a film location: the 1983 rock film Eddie and the Cruisers was shot there, and a 2005 episode of MTV\'s Viva La Bam was filmed at the track.\n\nAtco Raceway permanently closed in 2023 — the same year that Pastor Beggs retired after 39 years of service, marking a moment when two of Atco\'s most enduring institutions simultaneously passed a torch.'},
     {year:'1972–1974 — National Context',title:'Watergate & Nixon\'s Resignation',
      summary:'The Watergate scandal ended with President Nixon\'s resignation in August 1974 — the only presidential resignation in American history.',
      detail:'On June 17, 1972, operatives connected to President Nixon\'s reelection campaign broke into Democratic National Committee headquarters at the Watergate complex. The subsequent cover-up and congressional hearings consumed the nation for two years. On August 9, 1974, Richard Nixon resigned the presidency — the first and only president to do so. For congregations of faith, the Watergate years were a time to reaffirm the values of honesty, accountability, and servant leadership.'},
@@ -881,7 +942,10 @@ var ERAS = [
   events:[
     {year:'September 30, 1984 at 3:00 PM',title:'Rev. Dr. Joseph E. Beggs Ordained & Installed',
      summary:'Rev. Dr. Joseph E. Beggs was ordained and installed as pastor, beginning a 39-year ministry.',
-     detail:'On September 30, 1984 at 3:00 PM, Rev. Dr. Joseph E. Beggs was ordained and installed as pastor. He would serve for 39 years — the longest pastorate in the church\'s history. Under his leadership, the church expanded both physically and spiritually.'},
+     detail:'On September 30, 1984 at 3:00 PM, Rev. Dr. Joseph E. Beggs was ordained and installed as pastor. He would serve for 39 years — the longest pastorate in the church\'s history. Under his leadership, the church expanded both physically and spiritually.',
+     image:{src:'images/pastor-beggs.jpg',
+            alt:'Rev. Dr. Joseph E. Beggs, Pastor of Atco United Presbyterian Church',
+            caption:'Rev. Dr. Joseph E. Beggs — Pastor, 1984–2023 (Photo: atcopres.org)'}},
     {year:'Mid-1980s onward',title:'Koinonia: Small Home Group Bible Studies',
      summary:'Rev. Beggs launched Koinonia — small home group Bible studies meeting in homes throughout the Atco area.',
      detail:'Under Rev. Beggs\' leadership, the church launched Koinonia — small home group Bible studies meeting in homes throughout the Atco area, focusing on fellowship, prayer, Bible study, and mission/ministry. Thursday morning Bible Study in Fellowship Hall also began: "Never too old to learn, even today."'},
@@ -906,6 +970,24 @@ var ERAS = [
     {year:'September 11, 2001 — National Context',title:'The September 11 Attacks',
      summary:'The terrorist attacks of September 11, 2001 killed nearly 3,000 Americans. New Jersey lost more residents than any other state except New York. The church holds an annual 9/11 observance.',
      detail:'On the morning of September 11, 2001, al-Qaeda terrorists hijacked four commercial airplanes. Two struck the World Trade Center in New York City; one hit the Pentagon; one crashed in Shanksville, Pennsylvania. Nearly 3,000 people died. New Jersey lost more residents than any other state except New York — many NJ commuters worked in the World Trade Center.\n\nThe First Presbyterian Church of Atco holds an annual 9/11 observance to this day, honoring the memory of those lost with prayer and music.'},
+    {year:'August 25, 2009',title:'Church Website Launched: "Real People Discovering Real Love"',
+     summary:'The congregation\'s first website — www.atcopres.org — launched on August 25, 2009, with the tagline "Real People Discovering Real Love."',
+     detail:'On August 25, 2009, Atco United Presbyterian Church launched its first website at www.atcopres.org. The site\'s tagline — "Real People Discovering Real Love" — captured the congregation\'s welcoming spirit. The website included pages for worship services, youth ministries, Koinonia Bible studies, events, newsletters, and contact information. Snapshots of the site were preserved by the Internet Archive Wayback Machine from 2010 through 2013.',
+     image:{src:'images/church-building.jpg',
+            alt:'Atco United Presbyterian Church building at 449 Second Street',
+            caption:'Atco United Presbyterian Church — 2259 Atco Avenue / 449 Second Street, Atco, NJ (Photo: atcopres.org)'}},
+    {year:'2009–2013',title:'Music Ministries in Full Bloom',
+     summary:'The congregation\'s music life included Freedom (contemporary praise band), the Chancel Choir, Handbell Choir, T.N.P. (Tuesday Night Pickers), the youth band Purpose 19:21, and the ensemble Prophecy.',
+     detail:'During the 2009–2013 period, Atco Presbyterian\'s music ministry was exceptionally active:\n\n• Freedom — Contemporary praise band performing at the 8:15 AM service, led by Maria DiSciullo.\n• Chancel Choir — Sang at the 11 AM Traditional service September through June.\n• Atco Christ Chimes (Handbell Choir) — Directed by Patrick Riley of Hammonton, NJ.\n• Junior Choir / Bells — For youth, directed by "Aunt" Gail (Passarella) Del Monte.\n• T.N.P. (Tuesday Night Pickers) — Ensemble of Don Harbert, Al Gameron, Kristi Clark, Ann Marie DiCroce, Jeff Chapline, and Kevin Brennan.\n• Purpose 19:21 — "The Youth Band with a Purpose," featuring Ann Nduati, Angela Bissonette, Joshua Crump, and Jacob Foster.\n• Prophecy — Performed at Jesus & Java Coffee House events; led by Jeff Chapline, Bruce Smith, Kristi Clark, Wynn Keller, and Kevin Brennan.\n• Drama Team — Directed by Chris Troendle, mostly youth, performing throughout the year.\n• Praise Dancers — A small group performing sign language and praise dancing during worship services.'},
+    {year:'2009–2013',title:'Jesus & Java Coffee House',
+     summary:'The congregation hosted the Jesus & Java Coffee House — an outreach event featuring live music from the church\'s own bands.',
+     detail:'Among the congregation\'s creative outreach events during the Beggs years was the Jesus & Java Coffee House — a gathering that combined community fellowship with live music. The ensemble Prophecy (Jeff Chapline, Bruce Smith, Kristi Clark, Wynn Keller, Kevin Brennan) performed at these events, providing an informal, welcoming space for faith and connection.'},
+    {year:'2009–2013',title:'Youth Programs: C.I.A. and IMPACT',
+     summary:'Two structured youth programs — Christians In Action (grades 7+) and IMPACT (9th grade through college) — guided young people in faith, service, and leadership.',
+     detail:'During the Beggs years the church maintained structured youth programming across multiple age groups:\n\n• Kids4Christ (Grades 3–6): Led by Jake Foster, Lorean Foster, and Sandy Young. Mission: provide exciting, Christ-centered ministry for children.\n\n• Christians In Action — C.I.A. (Grades 7 and up): Led by Greg Schipske, Amy Troendle, and Amy Schipske. Mission: guide youth toward personal and spiritual growth.\n\n• IMPACT (9th grade through college): Mission — provide a safe place to fellowship, serve the community, strengthen faith, and grow as church leaders.\n\nThese programs gave generations of Atco young people a foundation in faith and service during the church\'s most active modern era.'},
+    {year:'2009–2013',title:'N.E.W. Joy & Circle of Friends Women\'s Ministries',
+     summary:'Women\'s ministry in the Beggs era included N.E.W. Joy (Nurture, Evangelism, Witness, Joy) and Circle of Friends, which met monthly for fellowship and mission.',
+     detail:'Women\'s ministry at Atco Presbyterian thrived in the 2009–2013 era alongside the long-standing Bluebirds organization:\n\n• N.E.W. Joy — A ministry built around four pillars: Nurture, Evangelism, Witness, and Joy.\n\n• Circle of Friends — Met on the 4th Friday of each month at 1 PM. Mission: present Bibles to baptized children, support Second Harvest food bank, and help those in need. Leaders included Joan Mahorter and Mary Harbert.\n\nThe historic Bluebirds (founded 1922) also continued under the leadership of Jean McDowell, meeting monthly on the last Thursday at 1:30 PM — still living out their century-old motto: "Happiness to Others."'},
     {year:'April 30, 2017',title:'150th Anniversary Celebration',
      summary:'The 150th Anniversary was celebrated with a 10 AM Worship Service followed by a Church Supper in Fellowship Hall.',
      detail:'On April 30, 2017, the 150th Anniversary of Atco United Presbyterian Church was celebrated at a 10 AM Worship Service followed by a Church Supper in Fellowship Hall. One hundred and fifty years of community, faith, and service — from those first meetings in private homes in 1866 to a thriving 21st-century congregation.'},
@@ -941,6 +1023,9 @@ var ERAS = [
   color:'#6b2d2d',
   summary:'The church continues to seek to honor Christ and serve the community through the efforts of its dedicated and faithful members — just as it has since November 1867.',
   events:[
+    {year:'Atco History',title:'Notable Residents of Atco, NJ',
+     summary:'Atco has been home to a television personality, a political strategist, a professional wrestler, a novelist, and a social justice entrepreneur.',
+     detail:'Notable residents who have called Atco home:\n\n• Sally Starr (1923–2013) — Beloved 1950s Philadelphia television personality known as "Our Gal Sal," famous for her cowgirl persona on children\'s TV.\n\n• Kellyanne Conway (born 1967) — Political strategist, pollster, and the first woman to manage a successful U.S. presidential campaign.\n\n• Jimmy "Superfly" Snuka (1943–2017) — Professional wrestler and WWE Hall of Famer, famous for his high-flying style.\n\n• Marvin Borowsky (1907–1969) — Novelist and Hollywood screenwriter.\n\n• Rey Ramsey (born 1960) — Social justice entrepreneur and business leader.\n\nAtco first appeared as an official census-designated place (CDP) in the 2020 U.S. Census, with a population of 9,058.'},
     {year:'Present Day',title:'Sunday Worship: 9:30 AM',
      summary:'The congregation gathers every Sunday at 9:30 AM for Contemporary and Traditional Worship.',
      detail:'Sunday Worship is held every week at 9:30 AM at 2259 Atco Avenue, Atco, NJ 08004. The Chancel Choir sings from early September through Memorial Day, plus special services (Thanksgiving Eve, Christmas Eve, Ash Wednesday, Maundy Thursday, and 9/11 observances). Choir rehearsals are held Thursdays at 7:30 PM.',
@@ -1225,6 +1310,7 @@ var FAMILIES_DATA = [
 /* ─── Topic auto-tagger ─────────────────────────────────────────────────── */
 var TAGS = {
   national: function(ev){ return /national context/i.test(String(ev.year)); },
+  atco:     function(ev){ return /atco history/i.test(String(ev.year)); },
   building: function(ev){
     var t = (ev.title+' '+ev.summary).toLowerCase();
     return /fire destroy|fire damage|rebuild|new church|new home|dedicat|edifice|repair|remodel|mortgage|pipe organ|ceiling fan|carillon.*install|carillon.*tower|tower.*carillon|parsonage|property purchas|expansion|addition|roof|furnish|pew|window|sanctuary.*heat|heating system/.test(t);
@@ -1243,9 +1329,9 @@ var TAGS = {
   },
   congregation: function(){ return true; }
 };
-var TAG_LIST   = ['national','building','pastoral','worship','education','congregation'];
+var TAG_LIST   = ['national','atco','building','pastoral','worship','education','congregation'];
 var TAG_LABELS = {
-  national:'National Events', building:'Building', pastoral:'Pastoral',
+  national:'National Events', atco:'Atco History', building:'Building', pastoral:'Pastoral',
   worship:'Music & Worship', education:'Education & Youth', congregation:'Church Life'
 };
 function getEventTags(ev){
@@ -1267,7 +1353,7 @@ function fmtDetail(text){
 }
 
 /* ─── Filter bar ────────────────────────────────────────────────────────── */
-var _activeFilters = new Set(['national','building','pastoral','worship','education','congregation']);
+var _activeFilters = new Set(['national','atco','building','pastoral','worship','education','congregation']);
 
 function buildFilterBar(){
   var html = '<div class="filter-bar" id="filter-bar"><div class="filter-bar-inner">'
@@ -1300,12 +1386,14 @@ function applyFilters(){
 function buildEvent(ev, eraId, idx, color){
   var tags   = getEventTags(ev);
   var nat    = isNational(ev);
+  var atco   = TAGS.atco(ev);
   var btnId  = eraId+'-e'+idx+'-btn';
   var panId  = eraId+'-e'+idx+'-pan';
-  var natCls = nat ? ' ev-national' : '';
+  var natCls = nat ? ' ev-national' : (atco ? ' ev-atco' : '');
   var imgHtml = '';
   if(ev.image){
-    imgHtml = '<figure class="event-image"><img src="'+esc(ev.image.src)+'" alt="'+esc(ev.image.alt)+'" loading="lazy">'
+    var wideCls = ev.image.wide ? ' event-image--wide' : '';
+    imgHtml = '<figure class="event-image'+wideCls+'"><img src="'+esc(ev.image.src)+'" alt="'+esc(ev.image.alt)+'" loading="lazy">'
       +'<figcaption>'+esc(ev.image.caption)+'</figcaption></figure>';
   }
   return '<div class="event-entry'+natCls+'" style="--era-color:'+color+'" data-tags="'+tags.join(' ')+'">'
