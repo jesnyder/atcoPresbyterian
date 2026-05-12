@@ -132,165 +132,167 @@
     .era-nav-btn.active { color: #fff; border-bottom-color: var(--color-focus); }
 
     /* ─── Layout ─────────────────────────────────────────────────────────── */
-    .site-main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    .site-main { padding: 0 0 4rem; }
 
-    /* ─── Era Section ────────────────────────────────────────────────────── */
-    .era-section { margin-bottom: 2rem; }
+    /* ─── Ref container (Pastors / Families) ──────────────────────── */
+    .ref-container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 1rem; }
 
-    .era-header {
-      display: flex; align-items: center; gap: 1rem;
-      width: 100%; background: none; border: none;
-      cursor: pointer;
-      padding: 1.1rem 1.1rem;
-      border-radius: var(--radius);
-      text-align: left;
-      transition: background var(--trans);
-    }
-    .era-header:hover { background: rgba(0,0,0,.04); }
-
+    /* ─── Era badge / title / chevron (reused in ref-section headers) ───── */
     .era-badge {
       flex-shrink: 0;
       font-size: .72rem; font-weight: 700;
       letter-spacing: .06em; text-transform: uppercase;
-      padding: .22rem .6rem;
-      border-radius: 2rem;
-      color: #fff;
-      white-space: nowrap;
+      padding: .22rem .6rem; border-radius: 2rem;
+      color: #fff; white-space: nowrap;
     }
     .era-titles { flex: 1 1 auto; min-width: 0; }
     .era-title {
       display: block;
       font-family: var(--font-serif);
       font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-      font-weight: 700;
-      color: var(--color-navy);
-      line-height: 1.3;
+      font-weight: 700; color: var(--color-navy); line-height: 1.3;
     }
-    .era-chevron {
-      flex-shrink: 0;
-      font-size: 1rem; color: var(--color-subtle);
+    .era-chevron, .event-chevron {
+      flex-shrink: 0; font-size: .72rem; color: var(--color-subtle);
       transition: transform var(--trans);
     }
-    .era-header[aria-expanded="true"] .era-chevron { transform: rotate(90deg); }
+    .ref-header[aria-expanded="true"] .era-chevron,
+    .family-btn[aria-expanded="true"] .event-chevron { transform: rotate(90deg); }
 
-    .era-panel { overflow: hidden; max-height: 0; transition: max-height .4s ease; }
-    .era-panel.open { max-height: 99999px; }
-
-    .era-summary {
-      font-size: .95rem; color: var(--color-muted);
-      padding: 0 1.2rem 1.2rem;
-      font-style: italic;
-      border-left: 3px solid var(--era-color, #aaa);
-      margin: 0 1.2rem 1.2rem;
-      line-height: 1.7;
+    /* ─── Filter Bar ──────────────────────────────────────────────────────────────── */
+    .filter-bar {
+      background: var(--color-navy-dark);
+      padding: .6rem 1rem;
+      border-bottom: 2px solid rgba(255,255,255,.08);
     }
-
-    /* ─── Expand-All Row ─────────────────────────────────────────────────── */
-    .expand-all-row {
-      display: flex; gap: .5rem;
-      padding: 0 1.2rem .9rem;
+    .filter-bar-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; gap: .35rem;
       flex-wrap: wrap;
     }
+    .filter-label {
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .07em; text-transform: uppercase;
+      color: rgba(255,255,255,.4); flex-shrink: 0;
+      margin-right: .15rem;
+    }
+    .filter-btn {
+      font-family: var(--font-sans); font-size: .68rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: .26rem .65rem; border-radius: 2rem; cursor: pointer;
+      border: 1px solid rgba(255,255,255,.2);
+      background: transparent; color: rgba(255,255,255,.42);
+      transition: background var(--trans), color var(--trans),
+                  border-color var(--trans), opacity var(--trans);
+    }
+    .filter-btn:hover { color: #fff; background: rgba(255,255,255,.14); }
+    .filter-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+    .filter-btn[aria-pressed="true"] {
+      color: #fff; border-color: rgba(255,255,255,.45);
+      background: rgba(255,255,255,.12);
+    }
+    .filter-btn[data-filter="all"][aria-pressed="true"] {
+      background: var(--color-focus); border-color: var(--color-focus);
+    }
+
+    /* ─── Layout ──────────────────────────────────────────────────────────────── */
+    .site-main { max-width: 900px; margin: 0 auto; padding: 0 1rem 4rem; }
+
+    /* ─── Era Section ──────────────────────────────────────────────────────────── */
+    .era-section { margin-bottom: 1.5rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--color-border); }
+    .era-header {
+      display: flex; align-items: center; gap: 1rem;
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 1rem 1.1rem; border-radius: 0; text-align: left;
+      transition: background var(--trans);
+    }
+    .era-header:hover { background: rgba(0,0,0,.04); }
+    .era-panel { overflow: hidden; max-height: 0; transition: max-height .4s ease; }
+    .era-panel.open { max-height: 99999px; }
+    .era-summary {
+      font-size: .95rem; color: var(--color-muted);
+      padding: 0 1.2rem 1.2rem; font-style: italic;
+      border-left: 3px solid var(--era-color, #aaa);
+      margin: 0 1.2rem 1.2rem; line-height: 1.7;
+    }
+
+    /* ─── Expand-All Row ──────────────────────────────────────────────────── */
+    .expand-all-row { display: flex; gap: .5rem; padding: 0 1.2rem .9rem; flex-wrap: wrap; }
     .expand-all-btn {
-      font-size: .72rem; padding: .28rem .75rem;
-      background: transparent;
-      border: 1px solid var(--color-border);
-      border-radius: 2rem;
-      cursor: pointer; color: var(--color-muted);
-      font-family: var(--font-sans);
+      font-size: .72rem; padding: .28rem .75rem; background: transparent;
+      border: 1px solid var(--color-border); border-radius: 2rem;
+      cursor: pointer; color: var(--color-muted); font-family: var(--font-sans);
       transition: background var(--trans), color var(--trans);
     }
     .expand-all-btn:hover { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
 
-    /* ─── Timeline Track ─────────────────────────────────────────────────── */
-    .timeline-track {
-      position: relative; padding-left: 2.5rem; margin: 0 .5rem;
-    }
+    /* ─── Timeline Track ──────────────────────────────────────────────────── */
+    .timeline-track { position: relative; padding-left: 2.5rem; margin: 0 .5rem; }
     .timeline-track::before {
       content: ''; position: absolute;
       left: .6rem; top: 0; bottom: 0;
       width: 2px; background: var(--color-line);
     }
 
-    /* ─── Event Entry ────────────────────────────────────────────────────── */
-    .event-entry { position: relative; margin-bottom: 1rem; }
-
+    /* ─── Event Entry ─────────────────────────────────────────────────────── */
+    .event-entry { position: relative; margin-bottom: .85rem; }
+    .event-entry[hidden] { display: none; }
     .event-dot {
-      position: absolute; left: -2rem; top: 1rem;
-      width: 10px; height: 10px;
-      border-radius: 50%;
+      position: absolute; left: -1.95rem; top: 1.05rem;
+      width: 10px; height: 10px; border-radius: 50%;
       background: var(--era-color, #aaa);
       border: 2px solid var(--color-bg);
       box-shadow: 0 0 0 1px var(--era-color, #aaa);
     }
-
+    .event-entry.ev-national .event-dot { background: #888; box-shadow: 0 0 0 1px #888; }
     .event-btn {
       width: 100%; text-align: left;
       background: var(--color-card);
       border: 1px solid var(--color-border);
       border-left: 4px solid var(--era-color, #aaa);
       border-radius: var(--radius);
-      padding: .8rem 1rem;
-      cursor: pointer;
+      padding: .8rem 1rem; cursor: pointer;
       box-shadow: var(--shadow);
       transition: box-shadow var(--trans), background var(--trans);
     }
-    .event-btn:hover { box-shadow: var(--shadow-lg); background: #f8f8f8; }
-
-    .event-header-row {
-      display: flex; align-items: baseline; gap: .6rem;
-      flex-wrap: wrap;
-    }
+    .event-btn:hover { box-shadow: var(--shadow-lg); background: #f9f8f6; }
+    .event-btn:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+    .event-entry.ev-national .event-btn { border-left-color: #777; background: #f5f3f0; }
+    .event-header-row { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
     .event-year {
-      font-family: var(--font-serif);
-      font-size: .78rem; font-weight: 700;
-      color: var(--era-color, #555);
-      white-space: nowrap; flex-shrink: 0;
+      font-family: var(--font-serif); font-size: .78rem; font-weight: 700;
+      color: var(--era-color, #555); white-space: nowrap; flex-shrink: 0;
     }
+    .event-entry.ev-national .event-year { color: #666; }
     .event-title {
-      font-family: var(--font-serif);
-      font-size: 1rem; font-weight: 700;
-      color: var(--color-navy);
-      line-height: 1.35;
-      flex: 1 1 auto;
+      font-family: var(--font-serif); font-size: 1rem; font-weight: 700;
+      color: var(--color-navy); line-height: 1.35; flex: 1 1 auto;
     }
     .event-chevron {
       font-size: .72rem; color: var(--color-subtle);
-      transition: transform var(--trans);
-      flex-shrink: 0;
+      transition: transform var(--trans); flex-shrink: 0;
     }
-    .event-btn[aria-expanded="true"] .event-chevron { transform: rotate(90deg); }
-
-    .event-summary {
-      font-size: .87rem; color: var(--color-muted);
-      margin-top: .28rem; line-height: 1.5;
-    }
-
+    .event-btn[aria-expanded="true"] .event-chevron,
+    .ref-header[aria-expanded="true"] .era-chevron { transform: rotate(90deg); }
+    .event-summary { font-size: .87rem; color: var(--color-muted); margin-top: .28rem; line-height: 1.5; }
     .event-detail { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
     .event-detail.open { max-height: 3000px; }
-
     .event-detail-inner {
       padding: .85rem 1rem .5rem;
-      border-top: 1px solid var(--color-border);
-      margin-top: .55rem;
-      font-size: .9rem; color: var(--color-muted);
-      line-height: 1.75;
+      border-top: 1px solid var(--color-border); margin-top: .55rem;
+      font-size: .9rem; color: var(--color-muted); line-height: 1.75;
     }
     .event-detail-inner p + p { margin-top: .6rem; }
-
     .event-image { margin-top: .9rem; }
     .event-image img {
-      width: 100%; max-width: 420px; height: auto;
-      display: block;
-      border-radius: var(--radius);
-      border: 1px solid var(--color-border);
+      width: 100%; max-width: 420px; height: auto; display: block;
+      border-radius: var(--radius); border: 1px solid var(--color-border);
     }
-    .event-image figcaption {
-      font-size: .77rem; color: var(--color-subtle);
-      margin-top: .3rem; font-style: italic;
-    }
+    .event-image figcaption { font-size: .77rem; color: var(--color-subtle); margin-top: .3rem; font-style: italic; }
+    /* No-results message */
+    .tl-empty { text-align: center; padding: 3rem 1rem; color: var(--color-muted); font-style: italic; display: none; }
 
-    /* ─── Pastors & Families Reference Sections ─────────────────────────── */
+                /* ─── Pastors & Families Reference Sections ─────────────────────────── */
     .ref-section {
       margin-bottom: 2rem;
       border: 1px solid var(--color-border);
@@ -403,9 +405,19 @@
     .footer-credit { margin-top: 1.4rem; color: #6b8aaf; font-size: .78rem; }
 
     /* ─── Responsive ─────────────────────────────────────────────────────── */
-    @media (max-width: 600px) {
-      .timeline-track { padding-left: 1.8rem; }
-      .event-dot { left: -1.5rem; }
+    @media (max-width: 620px) {
+      .tl-canvas::before { left: 28px; transform: none; }
+      .tl-item.tl-left, .tl-item.tl-right {
+        padding-left: 52px; padding-right: 8px; justify-content: flex-start;
+      }
+      .tl-item.tl-left::after, .tl-item.tl-right::after {
+        left: 16px; right: auto;
+      }
+      .tl-item.tl-left::before, .tl-item.tl-right::before {
+        left: 28px; right: auto;
+      }
+      .ev-card { max-width: 100%; }
+      .drawer-title { font-size: 1rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition: none !important; animation: none !important; }
@@ -475,6 +487,7 @@
     <p class="footer-credit">Timeline prepared 2026. Content drawn from church records, member-written histories, and the church website. Images courtesy atcopres.org. Not for commercial use.</p>
   </div>
 </footer>
+
 
 <script>
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1206,31 +1219,96 @@ var FAMILIES_DATA = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   RENDER ENGINE
+   RENDER ENGINE — Accordion with topic filters
    ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Topic auto-tagger ─────────────────────────────────────────────────── */
+var TAGS = {
+  national: function(ev){ return /national context/i.test(String(ev.year)); },
+  building: function(ev){
+    var t = (ev.title+' '+ev.summary).toLowerCase();
+    return /fire destroy|fire damage|rebuild|new church|new home|dedicat|edifice|repair|remodel|mortgage|pipe organ|ceiling fan|carillon.*install|carillon.*tower|tower.*carillon|parsonage|property purchas|expansion|addition|roof|furnish|pew|window|sanctuary.*heat|heating system/.test(t);
+  },
+  pastoral: function(ev){
+    var t = (ev.title+' '+ev.summary).toLowerCase();
+    return /ordained|installed.*pastor|called.*pastor|pastor.*installed|supply minister|ministerial supply|resignation|retired|farewell.*rev|rev.*farewell|installed.*rev|rev.*installed|began.*serv|serv.*pastor/.test(t);
+  },
+  worship: function(ev){
+    var t = (ev.title+' '+ev.summary).toLowerCase();
+    return /choir|handbell|bell choir|organist|easter.*morning|music ministry|carillon.*play|play.*carillon|hymn|anthem|bell set|junior choir director|senior choir|organ recital/.test(t);
+  },
+  education: function(ev){
+    var t = (ev.title+' '+ev.summary).toLowerCase();
+    return /sunday school|vacation bible|junior choir|king.s daughter|mission day|ranch hope|vbs|youth group|confirmation class|children.s/.test(t);
+  },
+  congregation: function(){ return true; }
+};
+var TAG_LIST   = ['national','building','pastoral','worship','education','congregation'];
+var TAG_LABELS = {
+  national:'National Events', building:'Building', pastoral:'Pastoral',
+  worship:'Music & Worship', education:'Education & Youth', congregation:'Church Life'
+};
+function getEventTags(ev){
+  var r = [];
+  TAG_LIST.forEach(function(tag){ if(tag!=='congregation' && TAGS[tag](ev)) r.push(tag); });
+  if(r.length === 0) r.push('congregation');
+  return r;
+}
+function isNational(ev){ return TAGS.national(ev); }
+
+/* ─── Helpers ────────────────────────────────────────────────────────────── */
 function esc(s){
-  return String(s)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 function fmtDetail(text){
   return text.split(/\n\n+/).map(function(p){
     return '<p>'+p.replace(/\n/g,'<br>')+'</p>';
   }).join('');
 }
+
+/* ─── Filter bar ────────────────────────────────────────────────────────── */
+var _activeFilters = new Set(['national','building','pastoral','worship','education','congregation']);
+
+function buildFilterBar(){
+  var html = '<div class="filter-bar" id="filter-bar"><div class="filter-bar-inner">'
+    +'<span class="filter-label">Show:</span>'
+    +'<button class="filter-btn" data-filter="all" aria-pressed="true">All</button>';
+  TAG_LIST.forEach(function(tag){
+    html += '<button class="filter-btn" data-filter="'+tag+'" aria-pressed="true">'+TAG_LABELS[tag]+'</button>';
+  });
+  return html+'</div></div>';
+}
+
+function applyFilters(){
+  document.querySelectorAll('.event-entry[data-tags]').forEach(function(entry){
+    var tags = entry.dataset.tags.split(' ');
+    entry.hidden = !tags.some(function(t){ return _activeFilters.has(t); });
+  });
+  document.querySelectorAll('.era-section').forEach(function(era){
+    era.hidden = era.querySelectorAll('.event-entry:not([hidden])').length === 0;
+  });
+  var empty = document.getElementById('tl-empty');
+  if(empty){
+    empty.style.display = document.querySelectorAll('.event-entry:not([hidden])').length === 0 ? 'block' : 'none';
+  }
+  var allOn = TAG_LIST.every(function(t){ return _activeFilters.has(t); });
+  var allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+  if(allBtn) allBtn.setAttribute('aria-pressed', allOn ? 'true' : 'false');
+}
+
+/* ─── Event + Era builders ──────────────────────────────────────────────── */
 function buildEvent(ev, eraId, idx, color){
+  var tags   = getEventTags(ev);
+  var nat    = isNational(ev);
   var btnId  = eraId+'-e'+idx+'-btn';
   var panId  = eraId+'-e'+idx+'-pan';
+  var natCls = nat ? ' ev-national' : '';
   var imgHtml = '';
   if(ev.image){
-    imgHtml = '<figure class="event-image">'
-      +'<img src="'+esc(ev.image.src)+'" alt="'+esc(ev.image.alt)+'" loading="lazy">'
-      +'<figcaption>'+esc(ev.image.caption)+'</figcaption>'
-      +'</figure>';
+    imgHtml = '<figure class="event-image"><img src="'+esc(ev.image.src)+'" alt="'+esc(ev.image.alt)+'" loading="lazy">'
+      +'<figcaption>'+esc(ev.image.caption)+'</figcaption></figure>';
   }
-  return '<div class="event-entry" style="--era-color:'+color+'">'
+  return '<div class="event-entry'+natCls+'" style="--era-color:'+color+'" data-tags="'+tags.join(' ')+'">'
     +'<div class="event-dot" aria-hidden="true"></div>'
     +'<button class="event-btn" id="'+btnId+'" aria-expanded="false" aria-controls="'+panId+'">'
     +'<div class="event-header-row">'
@@ -1241,19 +1319,18 @@ function buildEvent(ev, eraId, idx, color){
     +'<div class="event-summary">'+esc(ev.summary)+'</div>'
     +'</button>'
     +'<div class="event-detail" id="'+panId+'" role="region" aria-labelledby="'+btnId+'">'
-    +'<div class="event-detail-inner">'+fmtDetail(ev.detail)+imgHtml+'</div>'
+    +'<div class="event-detail-inner">'+fmtDetail(ev.detail || '')+imgHtml+'</div>'
     +'</div>'
     +'</div>';
 }
+
 function buildEra(era, first){
-  var hId = era.id+'-hdr';
-  var pId = era.id+'-pan';
-  var evHtml = era.events.map(function(ev,i){
-    return buildEvent(ev, era.id, i, era.color);
-  }).join('');
+  var hId   = era.id+'-hdr';
+  var pId   = era.id+'-pan';
+  var evHtml = era.events.map(function(ev, i){ return buildEvent(ev, era.id, i, era.color); }).join('');
   return '<section class="era-section" id="'+era.id+'" style="--era-color:'+era.color+'">'
     +'<button class="era-header" id="'+hId+'" aria-expanded="'+(first?'true':'false')+'" aria-controls="'+pId+'">'
-    +'<span class="era-badge" style="background:'+era.color+'" aria-hidden="true">'+esc(era.years)+'</span>'
+    +'<span class="era-badge" style="background:'+era.color+'">'+esc(era.years)+'</span>'
     +'<span class="era-titles"><span class="era-title">'+esc(era.title)+'</span></span>'
     +'<span class="era-chevron" aria-hidden="true">&#9656;</span>'
     +'</button>'
@@ -1267,18 +1344,16 @@ function buildEra(era, first){
     +'</div>'
     +'</section>';
 }
+
 function buildPastors(){
-  var hId = 'pastors-hdr', pId = 'pastors-pan';
+  var hId='pastors-hdr', pId='pastors-pan';
   var inner = PASTORS_DATA.map(function(grp){
     var items = grp.pastors.map(function(p){
-      return '<div class="pastor-item">'
-        +'<div class="pastor-name">'+esc(p.name)+'</div>'
+      return '<div class="pastor-item"><div class="pastor-name">'+esc(p.name)+'</div>'
         +'<div class="pastor-years">'+esc(p.years)+'</div>'
-        +'<div class="pastor-role-tag">'+esc(p.role)+'</div>'
-        +'</div>';
+        +'<div class="pastor-role-tag">'+esc(p.role)+'</div></div>';
     }).join('');
-    return '<div class="pastor-group-heading">'+esc(grp.group)+'</div>'
-      +'<div class="pastor-grid">'+items+'</div>';
+    return '<div class="pastor-group-heading">'+esc(grp.group)+'</div><div class="pastor-grid">'+items+'</div>';
   }).join('');
   return '<section class="ref-section" id="ref-pastors">'
     +'<button class="ref-header" id="'+hId+'" aria-expanded="false" aria-controls="'+pId+'">'
@@ -1286,132 +1361,117 @@ function buildPastors(){
     +'<span class="era-titles"><span class="era-title">Pastors Who Served, 1867–2023</span></span>'
     +'<span class="era-chevron" aria-hidden="true">&#9656;</span>'
     +'</button>'
-    +'<div class="ref-panel" id="'+pId+'" role="region" aria-labelledby="'+hId+'">'
-    +inner
-    +'</div>'
-    +'</section>';
+    +'<div class="ref-panel" id="'+pId+'" role="region" aria-labelledby="'+hId+'">'+inner+'</div></section>';
 }
-function buildFamilies(){
-  var hId = 'families-hdr', pId = 'families-pan';
-  var items = FAMILIES_DATA.map(function(fam, i){
-    var fBtnId = 'fam-'+i+'-btn';
-    var fPanId = 'fam-'+i+'-pan';
-    var memberHtml = fam.members.map(function(m){
-      return '<li><strong>'+esc(m.name)+'</strong> — '+esc(m.detail)+'</li>';
-    }).join('');
-    return '<div class="family-entry">'
-      +'<button class="family-btn" id="'+fBtnId+'" aria-expanded="false" aria-controls="'+fPanId+'">'
-      +'<span class="family-name">'+esc(fam.name)+'</span>'
-      +'<span class="family-tagline">'+esc(fam.tagline)+'</span>'
-      +'<span class="event-chevron" aria-hidden="true">&#9656;</span>'
-      +'</button>'
-      +'<div class="family-panel" id="'+fPanId+'" role="region" aria-labelledby="'+fBtnId+'">'
-      +'<div class="family-detail"><ul class="family-members">'+memberHtml+'</ul></div>'
-      +'</div>'
-      +'</div>';
-  }).join('');
-  return '<section class="ref-section" id="ref-families">'
-    +'<button class="ref-header" id="'+hId+'" aria-expanded="false" aria-controls="'+pId+'">'
-    +'<span class="ref-badge" style="background:#6b2d2d">Families</span>'
-    +'<span class="era-titles"><span class="era-title">Congregation Families</span></span>'
-    +'<span class="era-chevron" aria-hidden="true">&#9656;</span>'
-    +'</button>'
-    +'<div class="ref-panel" id="'+pId+'" role="region" aria-labelledby="'+hId+'">'
-    +'<div class="family-list">'+items+'</div>'
-    +'</div>'
-    +'</section>';
-}
+
 function render(){
   var root = document.getElementById('timeline-root');
   var nav  = document.getElementById('era-nav-inner');
-  var html = '', navHtml = '';
-  navHtml += '<button class="era-nav-btn" data-target="ref-pastors" aria-label="Jump to Pastors section">Pastors</button>';
-  navHtml += '<button class="era-nav-btn" data-target="ref-families" aria-label="Jump to Families section">Families</button>';
-  ERAS.forEach(function(era, i){
-    navHtml += '<button class="era-nav-btn" data-target="'+era.id
-      +'" aria-label="Jump to '+esc(era.title)+' ('+esc(era.years)+')">'
+  var eraHtml = '';
+  ERAS.forEach(function(era, i){ eraHtml += buildEra(era, i === 0); });
+  root.innerHTML = buildFilterBar()
+    + buildPastors()
+    + eraHtml
+    + '<p class="tl-empty" id="tl-empty">No events match the selected filters.</p>';
+  var navHtml = '<button class="era-nav-btn" data-target="ref-pastors">Pastors</button>';
+  ERAS.forEach(function(era){
+    navHtml += '<button class="era-nav-btn" data-target="'+era.id+'">'
       +esc(era.title.split(':')[0])+'</button>';
-    html += buildEra(era, i===0);
   });
-  root.innerHTML = buildPastors() + buildFamilies() + html;
-  nav.innerHTML  = navHtml;
+  nav.innerHTML = navHtml;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    INTERACTIONS
    ═══════════════════════════════════════════════════════════════════════════ */
 function toggle(btn, panel){
-  var open = btn.getAttribute('aria-expanded')==='true';
-  btn.setAttribute('aria-expanded', open?'false':'true');
+  var open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', open ? 'false' : 'true');
   panel.classList.toggle('open', !open);
 }
+
 document.addEventListener('click', function(e){
   var t = e.target;
+  /* Era accordion */
   var eraBtn = t.closest('.era-header');
   if(eraBtn){
     var p = document.getElementById(eraBtn.getAttribute('aria-controls'));
-    if(p) toggle(eraBtn, p);
-    return;
+    if(p) toggle(eraBtn, p); return;
   }
+  /* Pastors accordion */
   var refBtn = t.closest('.ref-header');
   if(refBtn){
     var p = document.getElementById(refBtn.getAttribute('aria-controls'));
-    if(p) toggle(refBtn, p);
-    return;
+    if(p) toggle(refBtn, p); return;
   }
+  /* Individual event */
   var evBtn = t.closest('.event-btn');
   if(evBtn){
     var p = document.getElementById(evBtn.getAttribute('aria-controls'));
-    if(p) toggle(evBtn, p);
-    return;
+    if(p) toggle(evBtn, p); return;
   }
+  /* Expand / Collapse all within era */
   var allBtn = t.closest('.expand-all-btn');
   if(allBtn){
     var eraEl = document.getElementById(allBtn.dataset.era);
-    var expand = allBtn.dataset.action==='expand';
-    if(eraEl) eraEl.querySelectorAll('.event-btn').forEach(function(b){
+    var expand = allBtn.dataset.action === 'expand';
+    if(eraEl) eraEl.querySelectorAll('.event-btn:not([hidden])').forEach(function(b){
       var p = document.getElementById(b.getAttribute('aria-controls'));
-      if(p){ b.setAttribute('aria-expanded', expand?'true':'false'); p.classList.toggle('open',expand); }
+      if(p){ b.setAttribute('aria-expanded', expand?'true':'false'); p.classList.toggle('open', expand); }
     });
     return;
   }
-  var famBtn = t.closest('.family-btn');
-  if(famBtn){
-    var p = document.getElementById(famBtn.getAttribute('aria-controls'));
-    if(p) toggle(famBtn, p);
+  /* Filter buttons */
+  var fBtn = t.closest('.filter-btn');
+  if(fBtn){
+    var filter = fBtn.dataset.filter;
+    if(filter === 'all'){
+      TAG_LIST.forEach(function(tag){ _activeFilters.add(tag); });
+    } else {
+      if(_activeFilters.has(filter)) _activeFilters.delete(filter);
+      else _activeFilters.add(filter);
+    }
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(function(b){
+      var f = b.dataset.filter;
+      if(f === 'all'){
+        b.setAttribute('aria-pressed', TAG_LIST.every(function(tag){ return _activeFilters.has(tag); }) ? 'true' : 'false');
+      } else {
+        b.setAttribute('aria-pressed', _activeFilters.has(f) ? 'true' : 'false');
+      }
+    });
+    applyFilters();
     return;
   }
+  /* Era nav */
   var navBtn = t.closest('.era-nav-btn');
   if(navBtn){
-    var target = document.getElementById(navBtn.dataset.target);
-    if(target){
-      var h = target.querySelector('.era-header');
-      var p = h && document.getElementById(h.getAttribute('aria-controls'));
-      if(h && p && h.getAttribute('aria-expanded')==='false') toggle(h, p);
-      var rh = target.querySelector('.ref-header');
-      var rp = rh && document.getElementById(rh.getAttribute('aria-controls'));
-      if(rh && rp && rh.getAttribute('aria-expanded')==='false') toggle(rh, rp);
-      target.scrollIntoView({behavior:'smooth', block:'start'});
+    var tid = navBtn.dataset.target;
+    var el  = document.getElementById(tid);
+    if(el){
+      var hdr = el.querySelector('.era-header, .ref-header');
+      var pan = hdr && document.getElementById(hdr.getAttribute('aria-controls'));
+      if(hdr && pan && hdr.getAttribute('aria-expanded') === 'false') toggle(hdr, pan);
+      el.scrollIntoView({behavior:'smooth', block:'start'});
     }
     document.querySelectorAll('.era-nav-btn').forEach(function(b){ b.classList.remove('active'); });
     navBtn.classList.add('active');
   }
 });
 
-// Active nav on scroll
+/* Active nav highlight on scroll */
 if('IntersectionObserver' in window){
   var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var id = e.target.id;
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
         document.querySelectorAll('.era-nav-btn').forEach(function(b){
-          b.classList.toggle('active', b.dataset.target===id);
+          b.classList.toggle('active', b.dataset.target === id);
         });
       }
     });
   },{rootMargin:'-20% 0px -70% 0px'});
   render();
-  document.querySelectorAll('.era-section, .ref-section').forEach(function(s){ io.observe(s); });
+  document.querySelectorAll('.era-section, .ref-section').forEach(function(s){ if(s.id) io.observe(s); });
 } else {
   render();
 }
